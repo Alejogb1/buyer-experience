@@ -1,34 +1,27 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
-import * as trpc from '@trpc/server';
-import { z } from "zod";
-
+import z from "zod"
 
 export const categoryRouter = createTRPCRouter({
-
     all: publicProcedure
-    .input(        
-        z.object({
-            categoryTitle: z.string()
-    }))
-    .query(async ({ ctx, input }) => {
-        const { categoryTitle } = input
-        const posts = await ctx.prisma.category.findMany({
-            select: {
-                id: true,
-                name: true,
-                products: true,
-            },
-            where:{
-              title: {
-                contains: categoryTitle ? categoryTitle : undefined,
-                mode: 'insensitive'
-              }
-                },
-                orderBy: {
-                createdAt: "desc",
-            },
+    .query(async ({ ctx }) => {
+        const categories = await ctx.prisma.category.findMany({
+          select: {
+            id: true,
+            name: true,
+            products: true,
+          }
         });
-    
-        return posts
+        return categories
+      }),
+      get: publicProcedure
+      .query(async ({ ctx }) => {
+        const categories = await ctx.prisma.category.findMany({
+          select: {
+            id: true,
+            name: true,
+          }
+        });
+        console.log("executing category router get...")
+        return categories
       }),
 })
