@@ -4,11 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "~/components/ui/navbar"
 const Home = () => {
-  const { data: session, status } = useSession();
-
-  const ImagePath =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1200px-Salesforce.com_logo.svg.png";
-
 
   return (
     <>
@@ -17,8 +12,7 @@ const Home = () => {
     </Head>
     <Navbar></Navbar>
     <main className="">
-
-
+      <h1 className="text-4xl text-center header">Encuentra el mejor software</h1>
     </main>
     </>
   );

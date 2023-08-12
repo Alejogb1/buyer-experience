@@ -1,5 +1,6 @@
 import Image from 'next/image'
-
+import CompanyIcons from './CompanyIcons'
+import CompanyImage from './CompanyImage'
 
 export default function ProductCard () {
     return (
