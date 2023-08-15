@@ -2,12 +2,6 @@ import {useState} from "react";
 import { useFormik, Field, Form, Formik } from 'formik';
 import Select from 'react-select';
 
-interface MyFormValues {
-  nombre: string;
-  email: string;
-  categoria: string;
-  review: string
-}
 
 export const Formulario:React.FC<{}> = () => {
   const options = [

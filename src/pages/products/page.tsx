@@ -16,13 +16,6 @@ export default async function Categories() {
           <h1 className='text-2xl header'>
             Todos los programas en un solo lugar
           </h1>
-          <ul>
-              {categoriesData.categories.map((category) => (
-                  <li key={category.id}>
-                    <Link href="/"  className='hover:underline'>{category.name}</Link>
-                 </li>
-              ))}  
-          </ul>
       </div>
     </main> 
   )

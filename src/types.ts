@@ -9,6 +9,13 @@ export interface CategoriesListProps {
     category?: string | undefined
 }
 
+export interface MyFormValues {
+  nombre: string;
+  email: string;
+  categoria: string;
+  review: string
+}
+
 type allCategoriesOutput = RouterOutputs["category"]["all"]
 
 export type Category = allCategoriesOutput[number]
