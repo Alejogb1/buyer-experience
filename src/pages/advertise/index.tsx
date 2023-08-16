@@ -1,6 +1,6 @@
 import { useFormik } from "formik"
 import { basicSchema } from "~/pages/api/validation";
- 
+
 const onSubmit = () => {
     console.log("enviado");
 };
@@ -19,46 +19,40 @@ const Advertise = () => {
 
     return (
         <div className="flex items-center justify-center h-screen">
-        <form className="w-1/4 m-6 p-5 bg-gray-100 rounded-lg" onSubmit={handleSubmit} autoComplete="off">
-            <h1 className="text-2xl font-bold mb-4">Publicita tu sitio aqui</h1>
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="sitio">Sitio Web</label>
-            <input
-            value={values.sitio}
-            onChange={handleChange}
-            id="sitio"
-            type="text"
-            onBlur={handleBlur}
-            className={`${
-                errors.sitio && touched.sitio ? "input-error " : ""
-              }`}
-            />
-            {errors.sitio && touched.sitio && <p className="error">{errors.sitio}</p>}
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="email">Email</label>
-            <input
-            value={values.email}
-            onChange={handleChange}
-            id="email"
-            type="email"
-            onBlur={handleBlur}
-            className={`${
-                errors.email && touched.email ? "input-error " : ""
-              }bg-gray-200 border border-gray-500 text-gray-900 text-m rounded-lg focus:ring-blue-700 focus:border-blue-500 block w-full p-2.5`}
-            />
-            {errors.email && touched.email && <p className="error">{errors.email}</p>}
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="categoria">Categoria</label>
-            <input
-            value={values.categoria}
-            onChange={handleChange}
-            id="categoria"
-            type="text"
-            onBlur={handleBlur}
-            className={`${
-                errors.categoria && touched.categoria ? "input-error " : ""
-              }bg-gray-200 border border-gray-500 text-gray-900 text-m rounded-lg focus:ring-blue-700 focus:border-blue-500 block w-full p-2.5`}
-            />
-            {errors.categoria && touched.categoria && <p className="error">{errors.categoria}</p>}
-            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-20 p-3 m-2 text-center" type="submit">Enviar</button>
-        </form>
+            <form>
+                <div className="space-y-12 p-10">
+                    <div className="border-b border-gray-900/10 pb-12">
+                        <h2 className="text-6xl font-sbold pb-5 leading-7 text-black-900">Anunciar</h2>
+                        <p className="mt-1 text-sm leading-6 text-gray-600 pb-5">Usa una dirección habitual en la que puedas recibir correo.</p>
+                        <div className="mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div className="sm:col-span-3">
+                                <label className="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+                                <div className="mt-2">
+                                    <input type="text" name="first-name" id="first-name" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+
+                            <div className="sm:col-span-3">
+                                <label className="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
+                                <div className="mt-2">
+                                    <input type="text" name="last-name" id="last-name" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+
+                            <div className="col-span-full">
+                                <label className="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                                <div className="mt-2">
+                                    <input type="text" name="street-address" id="street-address" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {errors.email && touched.email && <p className="error">{errors.email}</p>}
+                <div className="mt-6 flex items-center justify-end gap-x-6 pb-10 pr-10">
+                    <button type="submit" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+                </div>
+            </form>
         </div>
     );
 };
