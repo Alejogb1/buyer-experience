@@ -1,29 +1,30 @@
-import { GetServerSidePropsContext, InferGetServerSidePropsType, NextPage } from "next"
 import Navbar from '~/components/ui/navbar'
-import Link from "next/link"
 import { api } from "~/utils/api";
+import NameToSlugLink from '~/utils/slug'; // Import utils to convert name to slug
 
 const Categories = () => {
-  const {data: categoryQuery, isLoading } = api.category.get.useQuery();
+  const { data: categoryQuery, isLoading } = api.category.get.useQuery();
 
-  console.log("QUERY DATA: ", )
+  console.log("QUERY DATA: ",)
+
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
         <h1 className='text-2xl header'>
-          Todos los programas en un solo lugar 
+          Todos los programas en un solo lugar
         </h1>
         <ul>
           {categoryQuery?.map((item) => (
-                  <li key={item.id}>
-                  <Link href="/"  className='hover:underline'>{item.name}</Link>
-              </li>
-              ))
-            }
-        </ul>  
-   </div>
- </> 
+
+            <li key={item.id}>
+              <NameToSlugLink name={item.name} text={item.name} />
+            </li>
+          ))
+          }
+        </ul>
+      </div>
+    </>
 
   )
 }
