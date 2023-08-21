@@ -24,14 +24,14 @@ const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
             <Link
             className="hover:underline"
-            href="/categories"
+            href="/"
             >
-            Categorias de software
+            Logo
             </Link>
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static">
-            <Link href="/review" className="hover:underline">
-            Escribir reseña
+            <Link href="/categories" className="hover:underline">
+            Categorías
             </Link>
         </div>
         </div>

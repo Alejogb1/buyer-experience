@@ -1,11 +1,12 @@
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, RefinementList } from 'react-instantsearch';
+import { env } from "~/env.mjs";
 
-const searchClient = algoliasearch('0G5GAQY8CM', 'a2e36d70b367177343b8ba972a24d874');
+const searchClient = algoliasearch(env.NEXT_PUBLIC_ALGOLIA_APP_ID, env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY);
 
-function App() {
+export default function Search() {
   return (
-    <InstantSearch searchClient={searchClient} indexName="instant_search">
+    <InstantSearch searchClient={searchClient} indexName="dev_Categories">
       <RefinementList attribute="brand" />
     </InstantSearch>
   );
