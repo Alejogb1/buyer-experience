@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "~/components/ui/navbar"
+import Search from "~/components/Search";
 const Home = () => {
   const { data: session, status } = useSession();
 
@@ -16,6 +16,7 @@ const Home = () => {
         <title>Listado de los mejores softwares</title>
       </Head>
       <Navbar />
+      <Search />
       <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
@@ -24,14 +25,14 @@ const Home = () => {
                 Cual es la mejor aplicación para tu empresa?
               </h1>
               <p className="max-w-4xl mt-6 text-lg leading-8 text-gray-600">
-                Nuestro Motor de Recomendación™ te permitirá encontrar la solución que mejor se adapte a tu negocio.
+                Nuestro buscador te permitirá encontrar la solución que mejor se adapte a tu negocio.
               </p>
               <div className="mt-10                        flex items-center justify-center gap-x-6">
                 <a
                   href="#"
                   className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Buscar
+                  Buscar soluciones
                 </a>
                 <Link href="/review" className="text-sm font-semibold leading-6 text-gray-900">
                   Opinar <span aria-hidden="true">→</span>
