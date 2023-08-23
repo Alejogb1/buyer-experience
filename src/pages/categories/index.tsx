@@ -1,15 +1,19 @@
 import Navbar from '~/components/ui/navbar'
 import { api } from "~/utils/api";
 import NameToSlugLink from '~/utils/slug'; // Import utils to convert name to slug
+import Head from "next/head";
 
 const Categories = () => {
   const { data: categoryQuery, isLoading } = api.category.get.useQuery();
 
-  console.log("QUERY DATA: ",)
+  console.log("QUERY DATA: ", categoryQuery)
 
   return (
     <>
       <Navbar />
+      <Head>
+        <title>Categorias de software</title>
+      </Head>
       <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
         <h1 className='text-2xl header'>
           Todos los programas en un solo lugar

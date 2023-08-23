@@ -16,6 +16,7 @@ export interface MyFormValues {
 }
 export interface NameToSlugLinkProps {
   text: string;
+  name: string;
 }
 
 

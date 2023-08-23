@@ -2,7 +2,6 @@ import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import Navbar from "~/components/ui/navbar"
-import Search from "~/components/Search";
 const Home = () => {
   const { data: session, status } = useSession();
 
@@ -16,7 +15,6 @@ const Home = () => {
         <title>Listado de los mejores softwares</title>
       </Head>
       <Navbar />
-      <Search />
       <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">

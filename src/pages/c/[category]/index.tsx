@@ -1,7 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType, NextPage } from "next"
 import { useSession } from "next-auth/react"
 import Head from 'next/head'
-import Link from 'next/link'
 import { api } from "~/utils/api"
 
 const category: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ category }) => {
@@ -10,9 +9,6 @@ const category: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>>
 
     return (
         <>
-            <Head>
-                <title>Categoria de software CRM</title>
-            </Head>
             <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
                 {/* {<CategoryTitle {...category}/>} */}
                 <p className="w-9/12 text-black text-opacity-60 mb-4">
