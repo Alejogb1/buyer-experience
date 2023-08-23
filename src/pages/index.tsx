@@ -25,14 +25,14 @@ const Home = () => {
                 Cual es la mejor aplicación para tu empresa?
               </h1>
               <p className="max-w-4xl mt-6 text-lg leading-8 text-gray-600">
-                Nuestro sistema de busqueda® te permitirá encontrar la solución que mejor se adapte a tu negocio.
+                Nuestro buscador te permitirá encontrar la solución que mejor se adapte a tu negocio.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
                   className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Buscar soluciónes
+                  Buscar soluciones
                 </a>
                 <Link href="/review" className="text-sm font-semibold leading-6 text-gray-900">
                   Opinar <span aria-hidden="true">→</span>
