@@ -13,7 +13,8 @@ datasource db {
 model Category {
     id          Int       @id @default(autoincrement()) 
     name        String   
-    products    Product[] 
+    products    Product[]
+    slug        String @unique
 }
 
 model Product {
@@ -23,6 +24,6 @@ model Product {
     logo String
     description String
     rating Int
-    url String @unique
+    websiteurl String @unique
 }
 
