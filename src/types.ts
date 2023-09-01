@@ -19,7 +19,15 @@ export interface NameToSlugLinkProps {
   name: string;
 }
 
+export type SlugType = {
+  slug : Array<string>
+}
+
 
 type allCategoriesOutput = RouterOutputs["category"]["all"]
 
+type allProductsOutput = RouterOutputs["product"]["all"]
+
 export type Category = allCategoriesOutput[number]
+
+export type Product = allProductsOutput[number]
