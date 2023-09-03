@@ -8,6 +8,8 @@ import Head from 'next/head'
 import { api } from "~/utils/api";
 import { SlugType } from "~/types"
 import { useRouter } from "next/router";
+import Navbar from "~/components/ui/navbar";
+import Image from "next/image";
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
 type Props = {
@@ -36,23 +38,50 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
             <Head>
                 <title>/c/software { }</title>
             </Head>
+            <Navbar/>
             <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
                 {/* {<CategoryTitle {...category}/>} */}
-                <p className="w-9/12 text-black text-opacity-60 mb-4">
-                    {data[0]?.name}
-                </p>
-                <div className="subheading">
-                    <h3 className="text-2xl mb-2">Mejor en general</h3>
+                <div className="w-9/12 my-12">
+                    <h1 className="text-4xl font-semibold text-black">
+                        {data[0]?.name}
+                    </h1>
+                    <h4 className="text-2xl text-gray-700">Vende en más idiomas a más personas y asegúrate de que los clientes entiendan lo que estás vendiendo.</h4>
                 </div>
-                {/* <ProductCard {product.segment}/> */}
-                <div className="subheading">
-                    <h3 className="text-2xl mb-2 mt-10">Mejor para pymes</h3>
+                <div id="app-count" className="text-md text-gray-600 font-medium my-12">
+                    52 aplicaciones
                 </div>
-                {/* <ProductCard {product.segment}/> */}
                 <div className="subheading">
-                    <h3 className="text-2xl mb-2 mt-10">Mejor para grandes empresas</h3>
+                    <h3 className="text-lg mb-2 hover:underline">Más popular</h3>
+                    <div className="w-4/12 gap-4 flex-start flex flex-row">
+                        <figure className=" overflow-hidden shrink-0 relative">
+                            <img 
+                                className="rounded-md block relative shrink-0 w-16"
+                                src="https://cdn.shopify.com/app-store/listing_images/ca153fbdb5d5bc9bb3402f61073dbcb2/icon/CLOVkZCGgf0CEAE=.png" 
+                                alt="" 
+                            />
+                        </figure>
+                        <div className="flex flex-col flex-start gap-2">
+                            <div className="">
+                                <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                            </div>
+                            <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
+                                    <span className="">
+                                        5                                    
+                                    </span>
+                                    <span className="shrink-0 mr-2">
+                                        <Image 
+                                            width={12}
+                                            height={100}
+                                            src="/starIcon.png" alt="" 
+                                         />
+                                    </span>
+                                    <span> </span>
+                                    <span className="overflow-hidden whitespace-nowrap overflow-ellipsis"> Plan gratis disponible</span>
+                            </div>
+                            <div className="text-sm text-gray-600 font-medium">Traduce la tienda. Convertidor por geolocalización</div>
+                        </div>
+                    </div>
                 </div>
-                {/* <ProductCard {product.segment}/> */}
             </div>
         </>
     )
