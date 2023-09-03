@@ -7,10 +7,13 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 function Layout({ children }: LayoutProps) {
 
     return (
-        <div className={inter.className}>
+        <>
             <Navbar />
-            {children}
-        </div>
+            <main className={inter.className + "h-full"}>
+                {children}
+            </main>
+        </>
+      
     )
 }
 

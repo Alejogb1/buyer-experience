@@ -10,6 +10,7 @@ import { SlugType } from "~/types"
 import { useRouter } from "next/router";
 import Navbar from "~/components/ui/navbar";
 import Image from "next/image";
+import ProductCard from "~/components/ProductCard";
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
 type Props = {
@@ -38,8 +39,7 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
             <Head>
                 <title>/c/software { }</title>
             </Head>
-            <Navbar/>
-            <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
+            <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20 pb-20">
                 {/* {<CategoryTitle {...category}/>} */}
                 <div className="w-9/12 my-12">
                     <h1 className="text-4xl font-semibold text-black">
@@ -52,35 +52,15 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                 </div>
                 <div className="subheading">
                     <h3 className="text-lg mb-2 hover:underline">Más popular</h3>
-                    <div className="w-4/12 gap-4 flex-start flex flex-row">
-                        <figure className=" overflow-hidden shrink-0 relative">
-                            <img 
-                                className="rounded-md block relative shrink-0 w-16"
-                                src="https://cdn.shopify.com/app-store/listing_images/ca153fbdb5d5bc9bb3402f61073dbcb2/icon/CLOVkZCGgf0CEAE=.png" 
-                                alt="" 
-                            />
-                        </figure>
-                        <div className="flex flex-col flex-start gap-2">
-                            <div className="">
-                                <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
-                            </div>
-                            <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
-                                    <span className="">
-                                        5                                    
-                                    </span>
-                                    <span className="shrink-0 mr-2">
-                                        <Image 
-                                            width={12}
-                                            height={100}
-                                            src="/starIcon.png" alt="" 
-                                         />
-                                    </span>
-                                    <span> </span>
-                                    <span className="overflow-hidden whitespace-nowrap overflow-ellipsis"> Plan gratis disponible</span>
-                            </div>
-                            <div className="text-sm text-gray-600 font-medium">Traduce la tienda. Convertidor por geolocalización</div>
-                        </div>
-                    </div>
+                    <ProductCard/>
+                </div>
+                <div className="subheading my-9">
+                    <h3 className="text-lg mb-2 hover:underline">Mejor para pymes</h3>
+                    <ProductCard/>
+                </div>
+                <div className="subheading">
+                    <h3 className="text-lg mb-2 hover:underline">Mejor para grandes empresas</h3>
+                    <ProductCard/>
                 </div>
             </div>
         </>

@@ -9,7 +9,6 @@ const Categories = () => {
 
   return (
     <>
-      <Navbar />
         <Head>
           <title>Categorias de software</title>
         </Head>

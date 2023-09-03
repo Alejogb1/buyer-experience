@@ -1,6 +1,7 @@
 import { useFormik } from "formik"
 import { basicSchema } from "~/pages/api/validation";
- 
+import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+
 const onSubmit = () => {
     console.log("enviado");
 };
@@ -18,47 +19,39 @@ const Advertise = () => {
     });
 
     return (
-        <div className="flex items-center justify-center h-screen">
-        <form className="w-1/4 m-6 p-5 bg-gray-100 rounded-lg" onSubmit={handleSubmit} autoComplete="off">
-            <h1 className="text-2xl font-bold mb-4">Publicita tu sitio aqui</h1>
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="sitio">Sitio Web</label>
-            <input
-            value={values.sitio}
-            onChange={handleChange}
-            id="sitio"
-            type="text"
-            onBlur={handleBlur}
-            className={`${
-                errors.sitio && touched.sitio ? "input-error " : ""
-              }`}
-            />
-            {errors.sitio && touched.sitio && <p className="error">{errors.sitio}</p>}
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="email">Email</label>
-            <input
-            value={values.email}
-            onChange={handleChange}
-            id="email"
-            type="email"
-            onBlur={handleBlur}
-            className={`${
-                errors.email && touched.email ? "input-error " : ""
-              }bg-gray-200 border border-gray-500 text-gray-900 text-m rounded-lg focus:ring-blue-700 focus:border-blue-500 block w-full p-2.5`}
-            />
-            {errors.email && touched.email && <p className="error">{errors.email}</p>}
-            <label className="block mb-2 text-m font-medium text-gray-900" htmlFor="categoria">Categoria</label>
-            <input
-            value={values.categoria}
-            onChange={handleChange}
-            id="categoria"
-            type="text"
-            onBlur={handleBlur}
-            className={`${
-                errors.categoria && touched.categoria ? "input-error " : ""
-              }bg-gray-200 border border-gray-500 text-gray-900 text-m rounded-lg focus:ring-blue-700 focus:border-blue-500 block w-full p-2.5`}
-            />
-            {errors.categoria && touched.categoria && <p className="error">{errors.categoria}</p>}
-            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-20 p-3 m-2 text-center" type="submit">Enviar</button>
-        </form>
+        <div className="flex justify-center pt-20">
+            <div className="relative isolate overflow-hidden">
+            <div className="mx-auto max-w-8xl px-6 lg:px-8">
+                <div className="mx-auto max-w-8xl gap-x-8 gap-y-16 lg:max-w-none">
+                    <div className="max-w-4xl lg:max-w-4xl">
+                        <h2 className="text-8xl font-bold tracking-tight text-black sm:text-6xl">Existe una mejor solución que Zenrows?</h2>
+                        <p className="mt-4 text-lg leading-8 text-gray-600 font-semibold">
+                        Te explicamos de que va Zenrows, consigue un mejor precio, y las mejores alternativas que pudimos encontrar para vos.
+                        </p>
+                        <div className="mt-6 flex max-w-md gap-x-4">
+                        <label htmlFor="email-address" className="sr-only">
+                            Email address
+                        </label>
+                        <input
+                            id="email-address"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            required
+                            className="min-w-0 flex-auto rounded-md border-0 bg-black/5 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-black/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                            placeholder="Ingresa tu email"
+                        />
+                        <button
+                            type="submit"
+                            className="flex-none rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-normal text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                        >
+                            Subscribirse
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
