@@ -10,8 +10,8 @@ const Navbar = () => {
   const router = useRouter();
 
 
-  useEffect( () => {
-    if(category != ''){
+  useEffect(() => {
+    if (category != '') {
       router.push(`/c/${category}`).catch((error) =>
         console.log(error)
       )
@@ -20,23 +20,24 @@ const Navbar = () => {
 
   return (
     <nav className="mx-auto max-w-7xl px-20 sm:px-6 lg:px-20">
+      <div className="relative flex h-16 items-center justify-between">
         <div className="relative flex h-16 items-center justify-between">
-        <div className="relative flex h-16 items-center justify-between">
-            <Link
+          <Link
             className="hover:underline"
             href="/"
-            >
+          >
             Logo
-            </Link>
+          </Link>
         </div>
+
         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static">
-            <Link href="/categories" className="hover:underline">
+          <Link href="/categories" className="hover:underline">
             Categorías
-            </Link>
+          </Link>
         </div>
-        </div>
+      </div>
     </nav>
-    
+
   );
 };
 

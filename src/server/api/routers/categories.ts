@@ -27,7 +27,7 @@ export const categoryRouter = createTRPCRouter({
       console.log("executing category router get...")
       return categories
     }),
-    getAllCategorySlugs: publicProcedure
+  getAllCategorySlugs: publicProcedure
     .query(async ({ ctx }) => {
       console.log("get all slugs ctx: ", ctx)
       const slugs = await ctx.prisma.category.findMany({
@@ -39,15 +39,15 @@ export const categoryRouter = createTRPCRouter({
       console.log("executing get all slugs procedure...")
       return slugs
     }),
-    getCategoryBySlug: publicProcedure
+  getCategoryBySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
     .query(async ({ input, ctx }) => {
       const category = await ctx.prisma.category.findMany({
         where: {
           slug: input.slug
-        },    
+        },
       })
-      console.log("CATEGORY RESULT FOR PROPS: ",category)
+      console.log("CATEGORY RESULT FOR PROPS: ", category)
       return category;
     }),
 

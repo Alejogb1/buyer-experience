@@ -1,12 +1,12 @@
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
-import type {GetStaticProps,GetStaticPaths, NextPage} from 'next'
+import type { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next'
 import { prisma } from "~/server/db";
 import { appRouter } from '~/server/api/root';
 import superjson from 'superjson';
 import Head from 'next/head'
 import { api } from "~/utils/api";
-import {SlugType} from "~/types"
+import { SlugType } from "~/types"
 import { useRouter } from "next/router";
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
@@ -20,21 +20,21 @@ type CategoryData = {
     slug: string;
 }
 const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
-    const {slug} = props;
+    const { slug } = props;
 
-    const categoryQuery = api.category.getCategoryBySlug.useQuery({slug});
+    const categoryQuery = api.category.getCategoryBySlug.useQuery({ slug });
 
     const router = useRouter()
-    if(router.isFallback) {
+    if (router.isFallback) {
         return <p>Loading...</p>
     }
 
-    const {data} = categoryQuery;
+    const { data } = categoryQuery;
 
     return (
         <>
-             <Head>
-                <title>/c/software {}</title>
+            <Head>
+                <title>/c/software { }</title>
             </Head>
             <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
                 {/* {<CategoryTitle {...category}/>} */}
@@ -57,31 +57,31 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
         </>
     )
 }
-export const getStaticProps: GetStaticProps = async ( context ) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     const ssg: SSGHelper = generateSSGHelper();
-  
+
     const slug = context.params?.category;
 
     if (typeof slug !== "string") throw new Error("no slug");
-    
-    const category = await ssg.category.getCategoryBySlug.prefetch({slug})
-    
+
+    const category = await ssg.category.getCategoryBySlug.prefetch({ slug })
+
     return {
-      props: {
-        trpcState: ssg.dehydrate(),
-        slug
-      },
-      revalidate: 60,
+        props: {
+            trpcState: ssg.dehydrate(),
+            slug
+        },
+        revalidate: 60,
     };
-  };
-  
-  export const getStaticPaths: GetStaticPaths = async  () => {
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
 
     const slugs = await prisma.category.findMany({
         select: {
-          slug: true,
+            slug: true,
         },
-      });
+    });
     return {
         paths: slugs.map((item) => ({
             params: {
@@ -91,6 +91,6 @@ export const getStaticProps: GetStaticProps = async ( context ) => {
         fallback: true, // false or "blocking"
     }
 
-  };
-  
-  export default Category
+};
+
+export default Category
