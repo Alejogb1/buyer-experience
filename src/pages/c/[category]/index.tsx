@@ -34,10 +34,12 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
 
     const { data } = categoryQuery;
 
+    
+
     return (
         <>
             <Head>
-                <title>/c/software { }</title>
+                <title>Mejor {data[0].name}</title>
             </Head>
             <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20 pb-20">
                 {/* {<CategoryTitle {...category}/>} */}

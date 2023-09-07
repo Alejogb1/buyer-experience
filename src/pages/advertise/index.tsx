@@ -26,7 +26,7 @@ const Advertise = () => {
                     <div className="max-w-4xl lg:max-w-4xl">
                         <h2 className="text-8xl font-bold tracking-tight text-black sm:text-6xl">Existe una mejor solución que Zenrows?</h2>
                         <p className="mt-4 text-lg leading-8 text-gray-600 font-semibold">
-                        Te explicamos de que va Zenrows, consigue un mejor precio, y las mejores alternativas que pudimos encontrar para vos.
+                            Te explicamos de que va Zenrows, consigue un mejor precio, y las mejores alternativas que pudimos encontrar para vos.
                         </p>
                         <div className="mt-6 flex max-w-md gap-x-4">
                         <label htmlFor="email-address" className="sr-only">
