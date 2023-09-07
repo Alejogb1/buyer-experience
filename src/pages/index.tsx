@@ -14,20 +14,20 @@ const Home = () => {
       <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <div className="text-center">
+            <div className="text-center mt-10">
               <h1 className="text-8xl font-bold tracking-tight text-gray-900 sm:text-8xl">
-                Cual es la mejor aplicación para tu empresa?
+                Cual es el mejor software para tu empresa?              
               </h1>
               <p className="max-w-4xl mt-6 text-lg leading-8 text-gray-600">
                 Nuestro buscador te permitirá encontrar la solución que mejor se adapte a tu negocio.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
+                <Link
+                  href="/explorar"
                   className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Buscar soluciones
-                </a>
+                </Link>
                 <Link href="/review" className="text-sm font-semibold leading-6 text-gray-900">
                   Opinar <span aria-hidden="true">→</span>
                 </Link>

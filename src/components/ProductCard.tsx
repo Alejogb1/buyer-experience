@@ -12,7 +12,7 @@ export default function ProductCard () {
                 alt="" 
             />
         </figure>
-        <div className="flex flex-col flex-start gap-2">
+        <div className="flex flex-col flex-start gap-1">
             <div className="">
                 <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
             </div>

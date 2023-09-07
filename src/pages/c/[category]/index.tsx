@@ -41,7 +41,7 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
             <Head>
                 <title>Mejor {data[0].name}</title>
             </Head>
-            <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20 pb-20">
+            <div className="mx-auto max-w-7xl h-100 pb-20">
                 {/* {<CategoryTitle {...category}/>} */}
                 <div className="w-9/12 my-12">
                     <h1 className="text-4xl font-semibold text-black">
@@ -53,15 +53,15 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     52 aplicaciones
                 </div>
                 <div className="subheading">
-                    <h3 className="text-lg mb-2 hover:underline">Más popular</h3>
+                    <h3 className="text-lg mb-4 hover:underline">Más popular</h3>
                     <ProductCard/>
                 </div>
                 <div className="subheading my-9">
-                    <h3 className="text-lg mb-2 hover:underline">Mejor para pymes</h3>
+                    <h3 className="text-lg mb-4 hover:underline">Mejor para pymes</h3>
                     <ProductCard/>
                 </div>
                 <div className="subheading">
-                    <h3 className="text-lg mb-2 hover:underline">Mejor para grandes empresas</h3>
+                    <h3 className="text-lg mb-4 hover:underline">Mejor para grandes empresas</h3>
                     <ProductCard/>
                 </div>
             </div>

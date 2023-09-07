@@ -14,8 +14,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Layout>
-        <Component {...pageProps} />
+      <Layout >
+        <Component className={inter.className + "h-full"} {...pageProps} />
       </Layout>
     </SessionProvider>
   );

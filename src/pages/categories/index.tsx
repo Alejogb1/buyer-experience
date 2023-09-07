@@ -12,7 +12,7 @@ const Categories = () => {
         <Head>
           <title>Categorias de software</title>
         </Head>
-      <div className="mx-auto max-w-7xl h-100 px-20 sm:px-6 lg:px-20">
+      <div className="mx-auto max-w-7xl h-100">
         <h1 className='text-2xl header'>
           Todos los programas en un solo lugar
         </h1>

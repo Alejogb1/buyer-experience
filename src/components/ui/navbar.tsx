@@ -19,14 +19,14 @@ const Navbar = () => {
   }, [category])
 
   return (
-    <nav className="mx-auto max-w-7xl px-20 sm:px-6 lg:px-20">
+    <nav className="">
       <div className="relative flex h-16 items-center justify-between">
         <div className="relative flex h-16 items-center justify-between">
           <Link
-            className="hover:underline"
+            className="text-sm font-bold flex pt-1 italic"
             href="/"
           >
-            Logo
+             AUDIENCIA
           </Link>
         </div>
 

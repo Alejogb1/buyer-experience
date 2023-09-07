@@ -1,11 +1,18 @@
 import Link from "next/link"
 import Navbar from "~/components/ui/navbar"
+
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+
 const Explore = () => {
     return (
 
-        <div className="relative px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl flex justify-center items-center">
-            <h2 className="text-4xl font-bold">Trending this September</h2>
+        <div className="relative" >
+            <div className="max-w-4xl flex justify-left">
+                <div className={inter.className}>
+                    <h2 className="text-4xl font-semibold">En tendencia este Septiembre</h2>
+                </div>
             </div>
             <div
                 className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
