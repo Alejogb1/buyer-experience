@@ -28,7 +28,7 @@ const Home = () => {
                 >
                   Buscar soluciones
                 </Link>
-                <Link href="/opinion" className="text-sm font-semibold leading-6 text-gray-900">
+                <Link href="/opinar" className="text-sm font-semibold leading-6 text-gray-900">
                   Opinar <span aria-hidden="true">→</span>
                 </Link>
               </div>

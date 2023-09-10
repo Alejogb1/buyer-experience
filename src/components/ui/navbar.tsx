@@ -21,12 +21,16 @@ const Navbar = () => {
   return (
     <nav className="">
       <div className="relative flex h-16 items-center justify-between">
+        <div className="">
+          <span className="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1509 viendo</span>
+
+        </div>
         <div className="relative flex h-16 items-center justify-between">
           <Link
             className="text-sm font-bold flex pt-1 italic"
             href="/"
           >
-             AUDIENCIA
+            AUDIENCIA
           </Link>
         </div>
 
