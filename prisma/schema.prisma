@@ -22,7 +22,7 @@ model Product {
     logo        String
     description String
     rating      Int
-    websiteurl  String
+    website_url String
     categories  Category[]
 }
 
