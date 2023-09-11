@@ -3,7 +3,6 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 import { validationSchema } from '~/pages/opinar/index';
 
 export const reactHookFormRouter = createTRPCRouter({
-
     add: publicProcedure.input(validationSchema).mutation(({ input }) => {
         const id = Math.random()
             .toString(36)

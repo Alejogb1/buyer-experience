@@ -26,6 +26,14 @@ model Product {
     categories  Category[]
 }
 
+model Review {
+    id             Int    @id @default(autoincrement())
+    name           String
+    item_name      String
+    review_message String
+    user_rating    String
+}
+
 model CategoryToProduct {
     A Int
     B Int
