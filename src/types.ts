@@ -13,6 +13,7 @@ export interface MyFormValues {
   email: string;
   categoria: string;
   review: string
+  id: Number
 }
 export interface NameToSlugLinkProps {
   text: string;
@@ -20,7 +21,7 @@ export interface NameToSlugLinkProps {
 }
 
 export type SlugType = {
-  slug : Array<string>
+  slug: Array<string>
 }
 
 

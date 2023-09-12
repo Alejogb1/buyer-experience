@@ -8,8 +8,8 @@ export const validationSchema = z.object({
     name: z.string().min(2),
     email: z.string().email(),
     review_message: z.string().min(5),
-    product_name: z.string(),
-    rating: z.string(),
+    item_name: z.string(),
+    user_rating: z.string(),
 });
 
 export default function Opinar() {
@@ -28,15 +28,13 @@ export default function Opinar() {
             name: '',
             email: '',
             review_message: '',
-            product_name: '',
-            rating: '',
+            item_name: '',
+            user_rating: '',
         },
     });
 
     return (
         <>
-
-
             <Form
                 form={form}
                 handleSubmit={async (values) => {
@@ -78,11 +76,11 @@ export default function Opinar() {
                     <label className="block mb-2 text-xs font-medium text-gray-900 ">
                         Producto
                         <br />
-                        <input {...form.register('product_name')} placeholder="Por ejemplo: Hubspot" className="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1" required />
+                        <input {...form.register('item_name')} placeholder="Por ejemplo: Hubspot" className="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1" required />
                     </label>
-                    {form.formState.errors.product_name?.message && (
+                    {form.formState.errors.item_name?.message && (
                         <p className="text-red-500 text-xs">
-                            {form.formState.errors.product_name?.message}
+                            {form.formState.errors.item_name?.message}
                         </p>
                     )}
                 </div>
@@ -103,29 +101,29 @@ export default function Opinar() {
                     <label className="block mb-2 text-xs font-medium text-gray-900">Puntaje</label>
                     <div className="flex">
                         <div className="flex items-center mr-4">
-                            <input id="inline-radio" type="radio" value="1" {...form.register('rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
+                            <input id="inline-radio" type="radio" value="1" {...form.register('user_rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
                             <label className="ml-2 text-xs font-light text-gray-900 :text-gray-300">1</label>
                         </div>
                         <div className="flex items-center mr-4">
-                            <input id="inline-2-radio" type="radio" value="2" {...form.register('rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
+                            <input id="inline-2-radio" type="radio" value="2" {...form.register('user_rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
                             <label className="ml-2 text-xs font-medium text-gray-900 :text-gray-300">2</label>
                         </div>
                         <div className="flex items-center mr-4">
-                            <input id="inline-2-radio" type="radio" value="3" {...form.register('rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
+                            <input id="inline-2-radio" type="radio" value="3" {...form.register('user_rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
                             <label className="ml-2 text-xs font-medium text-gray-900 :text-gray-300">3</label>
                         </div>
                         <div className="flex items-center mr-4">
-                            <input id="inline-2-radio" type="radio" value="4" {...form.register('rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
+                            <input id="inline-2-radio" type="radio" value="4" {...form.register('user_rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
                             <label className="ml-2 text-xs font-medium text-gray-900 :text-gray-300">4</label>
                         </div>
                         <div className="flex items-center mr-4">
-                            <input id="inline-2-radio" type="radio" value="5" {...form.register('rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
+                            <input id="inline-2-radio" type="radio" value="5" {...form.register('user_rating')} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  :ring-offset-gray-800 focus:ring-2 :border-gray-600" />
                             <label className="ml-2 text-xs font-medium text-gray-900 :text-gray-300">5</label>
                         </div>
                     </div>
-                    {form.formState.errors.rating?.message && (
+                    {form.formState.errors.user_rating?.message && (
                         <p className="text-red-700">
-                            {form.formState.errors.rating?.message}
+                            {form.formState.errors.user_rating?.message}
                         </p>
                     )}
 

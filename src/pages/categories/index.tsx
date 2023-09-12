@@ -9,9 +9,9 @@ const Categories = () => {
 
   return (
     <>
-        <Head>
-          <title>Categorias de software</title>
-        </Head>
+      <Head>
+        <title>Categorias de software</title>
+      </Head>
       <div className="mx-auto max-w-7xl h-100">
         <h1 className='text-2xl header'>
           Todos los programas en un solo lugar
@@ -20,8 +20,8 @@ const Categories = () => {
           {categoryQuery?.map((item) => (
             <li key={item.id}>
               <Link href={`/c/${item.slug}`} className='hover:underline'>
-                  {item.name}
-              </Link>            
+                {item.name}
+              </Link>
             </li>
           ))
           }
