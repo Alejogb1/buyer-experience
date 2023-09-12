@@ -35,14 +35,20 @@ export default function Opinar() {
 
     return (
         <>
+
+
             <Form
                 form={form}
                 handleSubmit={async (values) => {
                     await mutation.mutateAsync(values);
                     form.reset();
                 }}
-                className="space-y-2 max-w-sm mx-auto"
+                className="space-y-2 max-w-sm mx-auto mt-10"
             >
+                <div className="px-4 sm:px-0">
+                    <h3 className="text-base font-semibold leading-7 text-gray-900">Deja tu reseña</h3>
+                    <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Datos personales y solicitud.</p>
+                </div>
                 <div className="">
                     <label className="block mb-2 text-xs font-medium text-gray-900 ">
                         Nombre
