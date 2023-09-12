@@ -12,13 +12,13 @@ const Explore = () => {
     return (
 
         <div className="relative" >
-            <div className="max-w-4xl flex justify-left">
+            <div className="max-w-4xl flex justify-left mt-5">
                 <div className={inter.className}>
                     <h2 className="text-2xl font-semibold">En tendencia este Septiembre</h2>
                 </div>
             </div>
-            <div className="col-span-full lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4">
-                <div className="pt-10 grid grid-flow-dense gap-1 lg:gap-2 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            <div className=" col-span-full lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4">
+                <div className="max-w-5xl pt-10 grid gap-y-4 grid-flow-dense gap-4 lg:gap-y-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
                     <div className="w-full cursor-pointer">
                         <div className="gap-4 flex-start flex flex-row">
                             <figure className=" overflow-hidden shrink-0 relative">
@@ -28,9 +28,9 @@ const Explore = () => {
                                     alt=""
                                 />
                             </figure>
-                            <div className="flex flex-col flex-start gap-1">
+                            <div className="flex flex-col flex-start gap-1 group">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -51,7 +51,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className="w-full cursor-pointer">
-                        <div className="gap-4 flex-start flex flex-row cursor pointer">
+                        <div className="gap-4 flex-start flex flex-row cursor pointer group">
                             <figure className=" overflow-hidden shrink-0 relative">
                                 <img
                                     className="rounded-md block relative shrink-0 w-16"
@@ -61,7 +61,7 @@ const Explore = () => {
                             </figure>
                             <div className="flex flex-col flex-start gap-1">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -82,7 +82,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className="w-full cursor-pointer">
-                        <div className="gap-4 flex-start flex flex-row cursor pointer">
+                        <div className="gap-4 flex-start flex flex-row cursor pointer group">
                             <figure className=" overflow-hidden shrink-0 relative">
                                 <img
                                     className="rounded-md block relative shrink-0 w-16"
@@ -92,7 +92,7 @@ const Explore = () => {
                             </figure>
                             <div className="flex flex-col flex-start gap-1">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -113,7 +113,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className="w-full cursor-pointer">
-                        <div className="gap-4 flex-start flex flex-row cursor pointer">
+                        <div className="gap-4 flex-start flex flex-row cursor pointer group">
                             <figure className=" overflow-hidden shrink-0 relative">
                                 <img
                                     className="rounded-md block relative shrink-0 w-16"
@@ -123,7 +123,7 @@ const Explore = () => {
                             </figure>
                             <div className="flex flex-col flex-start gap-1">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -144,7 +144,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className="w-full cursor-pointer">
-                        <div className="gap-4 flex-start flex flex-row cursor pointer">
+                        <div className="gap-4 flex-start flex flex-row cursor pointer group">
                             <figure className=" overflow-hidden shrink-0 relative">
                                 <img
                                     className="rounded-md block relative shrink-0 w-16"
@@ -154,7 +154,7 @@ const Explore = () => {
                             </figure>
                             <div className="flex flex-col flex-start gap-1">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline  text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -175,7 +175,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className="w-full cursor-pointer">
-                        <div className="gap-4 flex-start flex flex-row cursor pointer">
+                        <div className="gap-4 flex-start flex flex-row cursor pointer group">
                             <figure className=" overflow-hidden shrink-0 relative">
                                 <img
                                     className="rounded-md block relative shrink-0 w-16"
@@ -185,7 +185,7 @@ const Explore = () => {
                             </figure>
                             <div className="flex flex-col flex-start gap-1">
                                 <div className="">
-                                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                                 </div>
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
@@ -218,6 +218,27 @@ const Explore = () => {
                             'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                     }}
                 />
+            </div>
+            <div className="max-w-4xl flex justify-left mt-10">
+                <div className="flex-row flex">
+                    <h2 className="text-2xl font-semibold">Visitar otros productos</h2>
+                    <p className="text-sm font-semibold text-gray-600 item-center">i</p>
+                </div>
+                
+            </div>
+            <div className="grid gap-4">
+            <Link href={`/c/software-crm`} className='hover:underline mt-2'>
+                  Software CRMs
+              </Link>      
+                <Link href={`/c/software-crm`} className='hover:underline'>
+                  Software CRMs
+              </Link>      
+                <Link href={`/c/software-crm`} className='hover:underline'>
+                  Software CRMs
+              </Link>      
+                <Link href={`/c/software-crm`} className='hover:underline'>
+                  Software CRMs
+              </Link>      
             </div>
         </div>
     )
