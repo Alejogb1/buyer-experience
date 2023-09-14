@@ -34,7 +34,7 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
 
     const { data } = categoryQuery;
 
-    
+
 
     return (
         <>
@@ -53,16 +53,16 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     52 aplicaciones
                 </div>
                 <div className="subheading">
-                    <h3 className="text-lg mb-4 hover:underline">Más popular</h3>
-                    <ProductCard/>
+                    <h3 className="text-lg mb-4">Más popular</h3>
+                    <ProductCard />
                 </div>
                 <div className="subheading my-9">
-                    <h3 className="text-lg mb-4 hover:underline">Mejor para pymes</h3>
-                    <ProductCard/>
+                    <h3 className="text-lg mb-4">Mejor para pymes</h3>
+                    <ProductCard />
                 </div>
                 <div className="subheading">
-                    <h3 className="text-lg mb-4 hover:underline">Mejor para grandes empresas</h3>
-                    <ProductCard/>
+                    <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
+                    <ProductCard />
                 </div>
             </div>
         </>
