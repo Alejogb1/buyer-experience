@@ -15,7 +15,7 @@ export const validationSchema = z.object({
 export default function Opinar() {
     const router = useRouter()
     const utils = api.useContext().form;
-    const mutation = api.form.add.useMutation({
+    const mutation = api.form.addReview.useMutation({
         onSuccess: async () => {
             await utils.invalidate();
             router.push('/')
