@@ -4,7 +4,7 @@ import CompanyImage from './CompanyImage'
 
 export default function ProductCard() {
     return (
-        <div className="w-4/12 gap-4 flex-start flex flex-row cursor pointer">
+        <div className="w-4/12 gap-4 flex-start flex flex-row group cursor-pointer">
             <figure className=" overflow-hidden shrink-0 relative">
                 <img
                     className="rounded-md block relative shrink-0 w-16"
@@ -14,7 +14,7 @@ export default function ProductCard() {
             </figure>
             <div className="flex flex-col flex-start gap-1">
                 <div className="">
-                    <a href="/opinar" className="hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
+                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">Transcy: Traducción y monedas</a>
                 </div>
                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                     <span className="">
