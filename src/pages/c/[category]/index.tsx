@@ -17,56 +17,51 @@ type Props = {
     slug: SlugType
 }
 
-type CategoryData = {
-    id: number;
-    name: string;
-    slug: string;
-}
 const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
     const { slug } = props;
 
-    const categoryQuery = api.category.getCategoryBySlug.useQuery({ slug });
+    const { data: categoryQuery, isLoading } = api.category.getCategoryBySlug.useQuery({ slug });
 
     const router = useRouter()
     if (router.isFallback) {
         return <p>Loading...</p>
     }
 
-    const { data } = categoryQuery;
+    if (categoryQuery) {
+        const dataParsed = categoryQuery[0]
+        return (
+            <>
+                <Head>
+                    <title>Mejor {dataParsed?.name}</title>
+                </Head>
+                <div className="mx-auto max-w-7xl h-100 pb-20">
+                    {/* {<CategoryTitle {...category}/>} */}
+                    <div className="w-9/12 my-12">
+                        <h1 className="text-4xl font-semibold text-black">
+                            {dataParsed?.name}
+                        </h1>
+                        <h4 className="text-2xl text-gray-700">Vende en más idiomas a más personas y asegúrate de que los clientes entiendan lo que estás vendiendo.</h4>
+                    </div>
+                    <div className="text-md text-gray-500 font-normal mb-7">
+                        52 aplicaciones
+                    </div>
+                    <div className="subheading">
+                        <h3 className="text-lg mb-4">Más popular</h3>
+                        <ProductCard />
+                    </div>
+                    <div className="subheading my-9">
+                        <h3 className="text-lg mb-4">Mejor para pymes</h3>
+                        <ProductCard />
+                    </div>
+                    <div className="subheading">
+                        <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
+                        <ProductCard />
+                    </div>
+                </div>
+            </>
+        )
+    }
 
-
-
-    return (
-        <>
-            <Head>
-                <title>Mejor {data[0].name}</title>
-            </Head>
-            <div className="mx-auto max-w-7xl h-100 pb-20">
-                {/* {<CategoryTitle {...category}/>} */}
-                <div className="w-9/12 my-12">
-                    <h1 className="text-4xl font-semibold text-black">
-                        {data[0]?.name}
-                    </h1>
-                    <h4 className="text-2xl text-gray-700">Vende en más idiomas a más personas y asegúrate de que los clientes entiendan lo que estás vendiendo.</h4>
-                </div>
-                <div id="app-count" className="text-md text-gray-600 font-medium my-12">
-                    52 aplicaciones
-                </div>
-                <div className="subheading">
-                    <h3 className="text-lg mb-4">Más popular</h3>
-                    <ProductCard />
-                </div>
-                <div className="subheading my-9">
-                    <h3 className="text-lg mb-4">Mejor para pymes</h3>
-                    <ProductCard />
-                </div>
-                <div className="subheading">
-                    <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
-                    <ProductCard />
-                </div>
-            </div>
-        </>
-    )
 }
 export const getStaticProps: GetStaticProps = async (context) => {
     const ssg: SSGHelper = generateSSGHelper();
