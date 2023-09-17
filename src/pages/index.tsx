@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
-import Navbar from "~/components/ui/navbar"
+import Script from 'next/script'
 
 const Home = () => {
   const { data: session, status } = useSession();
@@ -48,6 +48,19 @@ const Home = () => {
           </div>
         </div>
       </main>
+      <div className="container">
+        <Script defer src="https://www.googletagmanager.com/gtag/js?id=G-J531CF9875" />
+        <Script defer id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-J531CF9875');
+        `}
+        </Script>
+      </div>
+
     </>
   );
 };
