@@ -1,7 +1,7 @@
 import { createProcedure } from "@trpc/server/dist/deprecated/internals/procedure";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 import { validationSchema } from '~/pages/opinar/index';
-import { validationSchemaProvider } from "~/pages/publicitar";
+import { validationSchemaProvider } from "~/pages/inscribir";
 export const reactHookFormRouter = createTRPCRouter({
     addReview: publicProcedure
         .input(validationSchema)

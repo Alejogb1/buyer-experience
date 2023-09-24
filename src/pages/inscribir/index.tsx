@@ -10,7 +10,7 @@ export const validationSchemaProvider = z.object({
     site_url: z.string().url(),
 });
 
-export default function Publicitar() {
+export default function Inscribir() {
     const router = useRouter()
     const utils = api.useContext().form;
     const mutation = api.form.addProvider.useMutation({
@@ -40,8 +40,8 @@ export default function Publicitar() {
                 className="space-y-2 max-w-sm mx-auto mt-10"
             >
                 <div className="px-4 sm:px-0">
-                    <h3 className="text-base font-semibold leading-7 text-gray-900">Publicita tu software</h3>
-                    <p className="max-w-2xl text-sm leading-6 text-gray-500">Datos personales y solicitud.</p>
+                    <h3 className="text-base font-semibold leading-7 text-gray-900">Inscribe a tu producto (gratis)</h3>
+                    <p className="max-w-2xl text-sm leading-6 text-gray-500">Registra tu software para que tu audiencia potencial lo encuentre.</p>
                 </div>
                 <div className="">
                     <label className="block mb-2 text-xs font-medium text-gray-900 ">

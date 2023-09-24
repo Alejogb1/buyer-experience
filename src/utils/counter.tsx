@@ -3,7 +3,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 // Concurrent users = Number of expected visits per minute * Visit Duration (in minutes)
 
 // Define the function with TypeScript types for the parameters
-function randomTimeFromInterval(min: number, max: number): number {
+export function randomTimeFromInterval(min: number, max: number): number {
     // min and max included
     return (Math.floor(Math.random() * (max - min + 1) + min) * 6000) / 6;
 }

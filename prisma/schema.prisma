@@ -23,6 +23,7 @@ model Product {
     description String
     rating      Int
     website_url String
+    badge       String
     categories  Category[]
 }
 

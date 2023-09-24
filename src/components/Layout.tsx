@@ -7,13 +7,13 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 function Layout({ children }: LayoutProps) {
 
     return (
-        <div className='mx-auto max-w-7xl px-20 sm:px-6 lg:px-20'>
+        <div className='mx-auto max-w-7xl px-2 lg:px-20 sm:px-6 lg:px-20'>
             <Navbar />
             <div className={inter.className + "h-full"}>
                 {children}
             </div>
         </div>
-      
+
     )
 }
 

@@ -15,10 +15,10 @@ const Home = () => {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mt-10">
-              <h1 className="text-8xl font-bold tracking-tight text-gray-900 sm:text-8xl">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-6xl lg:text-8xl">
                 Cual es el mejor software para tu empresa?
               </h1>
-              <p className="max-w-4xl mt-6 text-lg leading-8 text-gray-600">
+              <p className="max-w-4xl mt-6 lg:text-lg leading-8 text-gray-600">
                 Una herramienta que te permitirá encontrar la solución que mejor se adapte a tu negocio.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
