@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
         <div className="flex h-16 items-center justify-between mr-10">
           <Link
-            className="text-sm font-normal flex pt-1 italic"
+            className="text-sm font-medium flex pt-1"
             href="/"
           >
             AUDIENCIA
