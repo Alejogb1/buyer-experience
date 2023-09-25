@@ -4,6 +4,11 @@ import NameToSlugLink from '~/utils/slug'; // Import utils to convert name to sl
 import Head from "next/head";
 import Link from 'next/link';
 
+// Function to capitalize the first letter and convert the rest to lowercase
+function capitalizeFirstLetter(string: String) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 const Categories = () => {
   const { data: categoryQuery, isLoading } = api.category.get.useQuery();
 
@@ -20,7 +25,7 @@ const Categories = () => {
           {categoryQuery?.map((item) => (
             <li key={item.id}>
               <Link href={`/c/${item.slug}`} className='hover:underline'>
-                {item.name}
+                {capitalizeFirstLetter(item.name)}
               </Link>
             </li>
           ))

@@ -10,10 +10,11 @@ datasource db {
 }
 
 model Category {
-    id       Int       @id @default(autoincrement())
-    name     String
-    slug     String
-    products Product[]
+    id          Int       @id @default(autoincrement())
+    name        String
+    description String
+    slug        String
+    products    Product[]
 }
 
 model Product {
@@ -23,7 +24,6 @@ model Product {
     description String
     rating      Int
     website_url String
-    badge       String
     categories  Category[]
 }
 

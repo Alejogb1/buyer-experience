@@ -16,6 +16,10 @@ type SSGHelper = ReturnType<typeof generateSSGHelper>;
 type Props = {
     slug: SlugType
 }
+// Function to capitalize the first letter and convert the rest to lowercase
+function capitalizeFirstLetter(string: String) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
 const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
     const { slug } = props;
@@ -29,18 +33,19 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
 
     if (categoryQuery) {
         const dataParsed = categoryQuery[0]
+        const capitalizedCategoryName = dataParsed?.name ? capitalizeFirstLetter(dataParsed.name) : '';
         return (
             <>
                 <Head>
-                    <title>Mejor {dataParsed?.name}</title>
+                    <title>Mejor {capitalizedCategoryName}</title>
                 </Head>
                 <div className="mx-auto max-w-7xl h-100 pb-20">
                     {/* {<CategoryTitle {...category}/>} */}
                     <div className="w-9/12 my-12">
                         <h1 className="text-4xl font-semibold text-black">
-                            {dataParsed?.name}
+                            {capitalizedCategoryName}
                         </h1>
-                        <h4 className="text-2xl text-gray-700">Vende en más idiomas a más personas y asegúrate de que los clientes entiendan lo que estás vendiendo.</h4>
+                        <h4 className="text-2xl text-gray-700">{dataParsed?.description}</h4>
                     </div>
                     <div className="text-md text-gray-500 font-normal mb-7">
                         52 aplicaciones
