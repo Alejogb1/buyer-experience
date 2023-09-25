@@ -30,7 +30,7 @@ export default function ProductCard() {
                     <span> </span>
                     <span className="overflow-hidden whitespace-nowrap overflow-ellipsis"> Plan gratis disponible</span>
                 </div>
-                <div className="text-sm text-gray-600 font-medium">Traduce la tienda. Convertidor por geolocalización</div>
+                <div ><p className="text-sm text-gray-500 font-normal">Traduce la tienda. Convertidor por geolocalización</p></div>
             </div>
         </div>
     )
