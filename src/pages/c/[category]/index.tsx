@@ -11,63 +11,89 @@ import { useRouter } from "next/router";
 import Navbar from "~/components/ui/navbar";
 import Image from "next/image";
 import ProductCard from "~/components/ProductCard";
+import { Product } from "~/types";
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
 type Props = {
     slug: SlugType
 }
+type ProductCardProps = {
+    product?: {
+        id: number;
+        name: string;
+        description: string;
+        logo: string;
+        rating: number;
+        website_url: string;
+    } | undefined;
+
+};
+
+
 // Function to capitalize the first letter and convert the rest to lowercase
 function capitalizeFirstLetter(string: String) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
 const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
-    const { slug } = props;
-
-    const { data: categoryQuery, isLoading } = api.category.getCategoryBySlug.useQuery({ slug });
-
     const router = useRouter()
     if (router.isFallback) {
         return <p>Loading...</p>
     }
 
-    if (categoryQuery) {
-        const dataParsed = categoryQuery[0]
-        const capitalizedCategoryName = dataParsed?.name ? capitalizeFirstLetter(dataParsed.name) : '';
-        return (
-            <>
-                <Head>
-                    <title>Mejor {capitalizedCategoryName}</title>
-                </Head>
-                <div className="mx-auto max-w-7xl h-100 pb-20">
-                    {/* {<CategoryTitle {...category}/>} */}
-                    <div className="w-9/12 my-12">
-                        <h1 className="text-4xl font-semibold text-black">
-                            {capitalizedCategoryName}
-                        </h1>
-                        <h4 className="text-2xl text-gray-700">{dataParsed?.description}</h4>
-                    </div>
-                    <div className="text-md text-gray-500 font-normal mb-7">
-                        52 aplicaciones
-                    </div>
-                    <div className="subheading">
-                        <h3 className="text-lg mb-4">Más popular</h3>
-                        <ProductCard />
-                    </div>
-                    <div className="subheading my-9">
-                        <h3 className="text-lg mb-4">Mejor para pymes</h3>
-                        <ProductCard />
-                    </div>
-                    <div className="subheading">
-                        <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
-                        <ProductCard />
-                    </div>
-                </div>
-            </>
-        )
+    const { slug } = props;
+
+    const { data: categoryQuery } = api.category.getCategoryBySlug.useQuery({ slug });
+    const { data: productQuery } = api.product.getProductsByCategory.useQuery({ slug });
+
+    if (!categoryQuery || !productQuery) {
+        return <p>Cargando...</p>;
     }
 
+    const categoryData = categoryQuery[0];
+    const productData = productQuery[0];
+
+    const capitalizedCategoryName = categoryData?.name ? capitalizeFirstLetter(categoryData.name) : '';
+
+    const firstProduct = productData?.products[0]
+    const secondProduct = productData?.products[1]
+    const thirdProduct = productData?.products[2]
+
+    console.log(secondProduct)
+    return (
+        <>
+            <Head>
+                <title>Mejor {capitalizedCategoryName}</title>
+            </Head>
+            <div className="mx-auto max-w-7xl h-100 pb-20">
+                {/* {<CategoryTitle {...category}/>} */}
+                <div className="w-9/12 my-12">
+                    <h1 className="text-4xl font-semibold text-black">
+                        {capitalizedCategoryName}
+                    </h1>
+                    <h4 className="text-2xl text-gray-700">{categoryData?.description}</h4>
+                </div>
+                <div className="text-md text-gray-500 font-normal mb-7">
+                    72 aplicaciones
+                </div>
+                <div className="subheading">
+                    <h3 className="text-lg mb-4">Más popular</h3>
+                    {firstProduct && <ProductCard product={firstProduct} />}
+                </div>
+                <div className="subheading my-9">
+                    <h3 className="text-lg mb-4">Mejor para pymes</h3>
+                    {secondProduct && <ProductCard product={secondProduct} />}
+
+                </div>
+                <div className="subheading">
+                    <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
+                    {thirdProduct && <ProductCard product={thirdProduct} />}
+                </div>
+            </div>
+        </>
+    )
 }
+
 export const getStaticProps: GetStaticProps = async (context) => {
     const ssg: SSGHelper = generateSSGHelper();
 

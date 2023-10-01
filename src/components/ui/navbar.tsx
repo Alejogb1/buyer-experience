@@ -2,7 +2,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './dropdownMenu';
 import CounterClock from "../CounterClock";
 const Navbar = () => {
   const { data: session, status } = useSession();

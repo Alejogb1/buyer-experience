@@ -1,26 +1,10 @@
-import { useFormik } from "formik"
-import { basicSchema } from "~/pages/api/validation";
-import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
-
-const onSubmit = () => {
-  console.log("enviado");
-};
-
 
 const Product = () => {
-  const { values, errors, handleBlur, touched, isSubmitting, handleChange, handleSubmit } = useFormik({
-    initialValues: {
-      sitio: "",
-      email: "",
-      categoria: "",
-    },
-    validationSchema: basicSchema,
-    onSubmit,
-  });
+
 
   return (
     <div className="flex justify-center pt-20">
-      <div className="relative isolate overflow-hidden">
+      <div className="elative isolate overflow-hidden">
         <div className="mx-auto max-w-8xl px-6 lg:px-8">
           <div className="mx-auto max-w-8xl gap-x-8 gap-y-16 lg:max-w-none">
             <div className="max-w-4xl lg:max-w-4xl">
