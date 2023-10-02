@@ -1,5 +1,3 @@
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
@@ -8,16 +6,14 @@ import Layout from "~/components/Layout";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MyApp: AppType<{ session: null }> = ({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps: { ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <Layout >
-        <Component className={inter.className + "h-full"} {...pageProps} />
-      </Layout>
-    </SessionProvider>
+    <Layout >
+      <Component className={inter.className + "h-full"} {...pageProps} />
+    </Layout>
   );
 };
 

@@ -1,10 +1,8 @@
-import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import Script from 'next/script'
 
 const Home = () => {
-  const { data: session, status } = useSession();
 
   return (
     <>

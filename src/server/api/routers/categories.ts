@@ -1,4 +1,5 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
+import { TRPCError } from "@trpc/server"
 import { z } from "zod";
 
 export const categoryRouter = createTRPCRouter({

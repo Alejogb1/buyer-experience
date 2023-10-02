@@ -1,13 +1,10 @@
-import { signIn, signOut, useSession } from "next-auth/react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import CounterClock from "../CounterClock";
 const Navbar = () => {
-  const { data: session, status } = useSession();
   const [category, setCategory] = useState('');
   const router = useRouter();
-
 
   useEffect(() => {
     if (category != '') {
