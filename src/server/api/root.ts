@@ -15,15 +15,6 @@ export const appRouter = createTRPCRouter({
   category: categoryRouter,
   product: productRouter,
   form: reactHookFormRouter,
-  hello: t.procedure.query(() => {
-    throw new TRPCError({
-      code: 'INTERNAL_SERVER_ERROR',
-      message: 'An unexpected error occurred, please try again later.',
-      // optional: pass the original error to retain stack trace
-      cause: theError,
-    });
-  }),
-
 });
 
 // export type definition of API
