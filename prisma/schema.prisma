@@ -18,9 +18,10 @@ model Category {
 }
 
 model Form {
-  id        Int      @id @default(autoincrement())
-  email     String
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  email       String
+  productName String
+  createdAt   DateTime @default(now())
 }
 
 model Product {

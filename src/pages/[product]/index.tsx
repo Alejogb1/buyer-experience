@@ -2,17 +2,19 @@ import { api } from '~/utils/api';
 import { z } from 'zod';
 import { useRouter } from 'next/router'
 import { Form, SubmitButton, useZodForm } from '~/components/Form';
-import useAxios from "axios-hooks"
 
 // validation schema is used by api mutation and client
 export const validationSchemaLead = z.object({
   email: z.string().email(),
+  productName: z.string(),
 });
 
 const Product = () => {
   const router = useRouter()
 
   const name = router.query.product
+  const productName = Array.isArray(name) ? name[0] : name; // Ensure productName is a string
+
   const utils = api.useContext().form;
   const mutation = api.form.addLead.useMutation({
     onSuccess: async () => {
@@ -25,6 +27,8 @@ const Product = () => {
     schema: validationSchemaLead,
     defaultValues: {
       email: '',
+      productName: '',
+      // Aca quise poner el productName pero me da error / no funca
     },
   });
 
@@ -48,7 +52,11 @@ const Product = () => {
                 </p>
                 <Form form={form}
                   handleSubmit={async (values) => {
-                    await mutation.mutateAsync(values);
+                    if (!productName) return
+                    await mutation.mutateAsync({
+                      email: values.email,
+                      productName,
+                    })
                     form.reset();
                   }}
                   className="mt-6 flex flex-column max-w-md gap-x-4">

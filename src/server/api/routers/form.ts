@@ -24,7 +24,7 @@ export const reactHookFormRouter = createTRPCRouter({
         .mutation(async ({ input, ctx }) => {
             const providerInfo = await ctx.prisma.provider.create({
                 data: {
-                    ...input
+                    ...input,
                 }
             });
             return {

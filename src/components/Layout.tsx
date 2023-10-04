@@ -1,7 +1,7 @@
 import Navbar from './ui/navbar'
 import { LayoutProps } from '~/types'
 import { Inter } from "next/font/google";
-
+import Footer from './ui/footer';
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 function Layout({ children }: LayoutProps) {
@@ -12,6 +12,7 @@ function Layout({ children }: LayoutProps) {
             <div className={inter.className + "h-full"}>
                 {children}
             </div>
+            <Footer />
         </div>
 
     )
