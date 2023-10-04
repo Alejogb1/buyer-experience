@@ -17,6 +17,12 @@ model Category {
   products    Product[]
 }
 
+model Form {
+  id        Int      @id @default(autoincrement())
+  email     String
+  createdAt DateTime @default(now())
+}
+
 model Product {
   id          Int        @id @default(autoincrement())
   name        String
@@ -39,10 +45,10 @@ model Review {
 
 model Provider {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
   name      String
   email     String
   site_url  String
+  createdAt DateTime @default(now())
 }
 
 model CategoryToProduct {

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import Link from 'next/link';
 type ProductCardProps = {
     product: {
         id: number;
@@ -28,8 +28,14 @@ export default function ProductCard(product: ProductCardProps) {
             </figure>
             <div className="flex flex-col flex-start gap-1">
                 <div className="">
-                    <a href="/opinar" className="group-hover:underline text-md text-black font-semibold">{name}</a>
+                    <Link href={{
+                        pathname: '/[product]',
+                        query: { product: name },
+                    }} className='group-hover:underline text-md text-black font-semibold'>
+                        {name}
+                    </Link>
                 </div>
+
                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                     <span className="">
                         {rating}
