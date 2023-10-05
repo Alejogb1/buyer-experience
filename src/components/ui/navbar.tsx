@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="relative flex h-16 items-center justify-between">
         <div className="">
           <span className="flex items-center text-sm font-medium text-gray-800">
-            <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1509 viendo</span>
+            <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1 viendo</span>
         </div>
         <div className="flex h-16 items-center justify-between mr-10">
           <Link

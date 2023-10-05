@@ -219,12 +219,6 @@ const Explore = () => {
                     }}
                 />
             </div>
-            <div className="max-w-4xl flex justify-left mt-10">
-                <div className="flex-row flex">
-                    <h2 className="text-2xl font-semibold">Visitar otros productos</h2>
-                    <p className="text-sm font-semibold text-gray-600 item-center">i</p>
-                </div>
-            </div>
         </div>
     )
 }
