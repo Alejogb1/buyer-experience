@@ -12,6 +12,7 @@ const MyApp: AppType<{ session: null }> = ({
 }) => {
   return (
     <Layout >
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <Component className={inter.className + "h-full"} {...pageProps} />
     </Layout>
   );
