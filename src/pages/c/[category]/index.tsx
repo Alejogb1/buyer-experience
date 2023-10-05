@@ -2,16 +2,13 @@ import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import type { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next'
 import { prisma } from "~/server/db";
-import { appRouter } from '~/server/api/root';
-import superjson from 'superjson';
 import Head from 'next/head'
 import { api } from "~/utils/api";
 import { SlugType } from "~/types"
 import { useRouter } from "next/router";
-import Navbar from "~/components/ui/navbar";
-import Image from "next/image";
 import ProductCard from "~/components/ProductCard";
-import { Product } from "~/types";
+import capitalizeFirstLetters from "~/utils/capitalize";
+
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
 type Props = {
@@ -55,6 +52,9 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
 
     const capitalizedCategoryName = categoryData?.name ? capitalizeFirstLetter(categoryData.name) : '';
 
+
+
+
     const firstProduct = productData?.products[0]
     const secondProduct = productData?.products[1]
     const thirdProduct = productData?.products[2]
@@ -63,7 +63,11 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
     return (
         <>
             <Head>
-                <title>Mejor {capitalizedCategoryName}</title>
+                <title>{categoryData && capitalizeFirstLetters(categoryData.name)} | Audiencia</title>
+                <meta
+                    name="description"
+                    content={categoryData?.description}
+                />
             </Head>
             <div className="mx-auto max-w-7xl h-100 pb-20">
                 {/* {<CategoryTitle {...category}/>} */}

@@ -2,18 +2,26 @@ import { api } from '~/utils/api';
 import { z } from 'zod';
 import { useRouter } from 'next/router'
 import { Form, SubmitButton, useZodForm } from '~/components/Form';
-
+import Head from 'next/head';
+import Link from 'next/link';
 // validation schema is used by api mutation and client
 export const validationSchemaLead = z.object({
   email: z.string().email(),
   productName: z.string(),
 });
+import capitalizeFirstLetters from "~/utils/capitalize";
+
+type Props = {
+  slug: String
+}
 
 const Product = () => {
+
   const router = useRouter()
 
   const name = router.query.product
-  const productName = Array.isArray(name) ? name[0] : name; // Ensure productName is a string
+
+  const productName: string = name as string // Ensure productName is a string
 
   const utils = api.useContext().form;
   const mutation = api.form.addLead.useMutation({
@@ -34,12 +42,17 @@ const Product = () => {
 
   return (
     <div className="">
+      <Head>
+        <title> Que es {productName ? productName : "no"}? Audiencia</title>
+        <meta
+          name="description"
+          content="Te explicamos de que va, consigue un mejor precio, y las mejores alternativas que pudimos encontrar solo para vos."
+        />
+      </Head>
       <div className="">
-        <span className="hover:underline font-semilight text-sm cursor-pointer">home </span>
-        <span className="font-thin">/ </span>
-        <span className="hover:underline font-semilight text-sm cursor-pointer"> CRM </span>
-        <span className="font-thin">/ </span>
-        <span className="hover:underline font-semilight text-sm cursor-pointer">{name}</span>
+        <Link href="/" className="hover:underline font-semilight text-sm cursor-pointer">Home</Link>
+        <span className="font-thin"> / </span>
+        <span className="font-semilight text-sm">{name}</span>
       </div>
       <div className="pt-20">
         <div className="overflow-hidden">

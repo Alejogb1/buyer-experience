@@ -128,7 +128,7 @@ const Explore = () => {
                                 <div className="self-stretch items-center flex flex-row relative text-sm text-black font-normal">
                                     <span className="">
                                         5
-                                </span>
+                                    </span>
                                     <span className="shrink-0 mr-2">
                                         <Image
                                             width={12}
@@ -224,21 +224,6 @@ const Explore = () => {
                     <h2 className="text-2xl font-semibold">Visitar otros productos</h2>
                     <p className="text-sm font-semibold text-gray-600 item-center">i</p>
                 </div>
-                
-            </div>
-            <div className="grid gap-4">
-            <Link href={`/c/software-crm`} className='hover:underline mt-2'>
-                  Software CRMs
-              </Link>      
-                <Link href={`/c/software-crm`} className='hover:underline'>
-                  Software CRMs
-              </Link>      
-                <Link href={`/c/software-crm`} className='hover:underline'>
-                  Software CRMs
-              </Link>      
-                <Link href={`/c/software-crm`} className='hover:underline'>
-                  Software CRMs
-              </Link>      
             </div>
         </div>
     )
