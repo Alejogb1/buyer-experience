@@ -22,7 +22,7 @@ const Navbar = () => {
             <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1 viendo</span>
         </div>
           <Link
-            className="text-sm font-medium flex pt-1"
+            className="text-sm font-medium pt-1"
             href="/"
           >
             AUDIENCIA
