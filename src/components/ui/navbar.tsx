@@ -20,9 +20,10 @@ const Navbar = () => {
         <div className="">
           <span className="flex items-center text-sm font-medium text-gray-800">
             <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1 viendo</span>
-        </div>
+        </div> 
+
           <Link
-            className="text-sm font-medium pt-1 absolute mx-auto"
+            className="text-sm font-medium flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
             href="/"
           >
             AUDIENCIA
