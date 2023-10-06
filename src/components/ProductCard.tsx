@@ -21,7 +21,7 @@ export default function ProductCard(product: ProductCardProps) {
         <Link href={{
             pathname: '/[product]',
             query: { product: name },
-        }} className="w-4/12 gap-4 flex-start flex flex-row group cursor-pointer">
+        }} className="lg:w-4/12 w-8/12 gap-4 flex-start flex flex-row group cursor-pointer">
             <figure className=" overflow-hidden shrink-0 relative">
                 <img
                     className="rounded-md block relative shrink-0 w-16"
