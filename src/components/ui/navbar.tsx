@@ -23,7 +23,7 @@ const Navbar = () => {
         </div> 
 
           <Link
-            className="text-sm font-medium flex flex-1 items-center justify-center sm:items-stretch sm:justify-center pr-2"
+            className="text-sm font-medium flex flex-1 items-center justify-center sm:items-stretch sm:justify-center sm:mr-2"
             href="/"
           >
             AUDIENCIA
