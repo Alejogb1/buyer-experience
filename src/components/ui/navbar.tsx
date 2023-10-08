@@ -21,16 +21,15 @@ const Navbar = () => {
           <span className="flex items-center text-sm font-medium text-gray-800">
             <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-1.5 flex-shrink-0"></span>1 viendo</span>
         </div> 
-
-          <Link
-            className="text-sm font-medium flex flex-1 items-center justify-center sm:items-stretch sm:justify-center sm:mr-2"
+        <div className="text-sm font-medium mx-auto">
+        <Link
+            className=""
             href="/"
           >
             AUDIENCIA
           </Link>
-      
-
-        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static">
+        </div>
+        <div className="inset-y-0 right-0 flex items-center pr-2 sm:static">
           <Link href="/categories" className="hover:underline">
             Categorías
           </Link>
