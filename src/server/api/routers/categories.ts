@@ -47,5 +47,18 @@ export const categoryRouter = createTRPCRouter({
       })
       return category;
     }),
-
+  getCategoryByProduct: publicProcedure
+    .input(z.object({ name: z.string() }))
+    .query(async ({ input, ctx }) => {
+      await ctx.prisma.product.findMany({
+        where: { name: input.name },
+        select: {
+          categories: {
+            select: {
+              slug: true,
+            }
+          }
+        }
+      });
+    })
 })
