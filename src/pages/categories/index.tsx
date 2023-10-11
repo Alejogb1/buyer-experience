@@ -1,6 +1,4 @@
-import Navbar from '~/components/ui/navbar'
 import { api } from "~/utils/api";
-import NameToSlugLink from '~/utils/slug'; // Import utils to convert name to slug
 import Head from "next/head";
 import Link from 'next/link';
 

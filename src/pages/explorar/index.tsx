@@ -18,7 +18,7 @@ const Explore = () => {
                 </div>
             </div>
             <div className=" col-span-full lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4">
-                <div className="max-w-5xl pt-10 grid gap-y-4 grid-flow-dense gap-4 lg:gap-y-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+              X  <div className="max-w-5xl pt-10 grid gap-y-4 grid-flow-dense gap-4 lg:gap-y-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
                     <div className="w-full cursor-pointer">
                         <div className="gap-4 flex-start flex flex-row">
                             <figure className=" overflow-hidden shrink-0 relative">
