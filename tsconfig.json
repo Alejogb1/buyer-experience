@@ -34,7 +34,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/pages/[product]"
+    "src/pages/p/[product]"
   ],
   "exclude": [
     "node_modules"
