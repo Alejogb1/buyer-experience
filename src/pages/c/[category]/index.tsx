@@ -60,7 +60,7 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
             <div className="mx-auto max-w-7xl h-100 ">
                 {/* {<CategoryTitle {...category}/>} */}
                 <div className="w-11/12 md:w-10/12 lg:w-9/12 my-2 lg:my-12">
-                    <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold text-black lg:pb-2">
+                    <h1 className="text-2xl md:text-2xl lg:text-4xl font-semibold text-black lg:pb-2">
                         {capitalizedCategoryName}
                     </h1>
                     <h4 className=" md:text-2xl lg:text-2xl text-gray-700">{categoryData?.description}</h4>
