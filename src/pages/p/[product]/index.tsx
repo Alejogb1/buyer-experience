@@ -59,7 +59,7 @@ const Product = () => {
           <div className="max-w-8xl">
             <div className="max-w-8xl gap-x-8 gap-y-16 lg:max-w-none">
               <div className="max-w-4xl lg:max-w-4xl">
-                <h2 className="text-8xl font-bold tracking-tight text-black sm:text-6xl">{name}</h2>
+                <h2 className="text-4xl lg:text-8xl font-bold tracking-tight text-black sm:text-6xl">{name}</h2>
                 <p className="mt-4 text-lg leading-8 text-gray-600 font-light">
                   Te explicamos de que va {name}, consigue un mejor precio, y las mejores alternativas que pudimos encontrar solo para vos y tu equipo.
                 </p>
