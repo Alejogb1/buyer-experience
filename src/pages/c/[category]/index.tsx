@@ -14,18 +14,6 @@ type SSGHelper = ReturnType<typeof generateSSGHelper>;
 type Props = {
     slug: SlugType
 }
-type ProductCardProps = {
-    product?: {
-        id: number;
-        name: string;
-        description: string;
-        logo: string;
-        rating: number;
-        website_url: string;
-    } | undefined;
-
-};
-
 
 // Function to capitalize the first letter and convert the rest to lowercase
 function capitalizeFirstLetter(string: String) {
@@ -69,13 +57,13 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     content={categoryData?.description}
                 />
             </Head>
-            <div className="mx-auto max-w-7xl h-100 pb-20">
+            <div className="mx-auto max-w-7xl h-100 ">
                 {/* {<CategoryTitle {...category}/>} */}
-                <div className="w-9/12 my-12">
-                    <h1 className="text-4xl font-semibold text-black">
+                <div className="w-11/12 md:w-10/12 lg:w-9/12 my-2 lg:my-12">
+                    <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold text-black lg:pb-2">
                         {capitalizedCategoryName}
                     </h1>
-                    <h4 className="md:text-2xl lg:text-2xl text-gray-700">{categoryData?.description}</h4>
+                    <h4 className=" md:text-2xl lg:text-2xl text-gray-700">{categoryData?.description}</h4>
                 </div>
                 <div className="text-md text-gray-500 font-normal mb-7">
                     72 aplicaciones
