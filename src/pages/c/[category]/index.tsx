@@ -75,7 +75,7 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     <h1 className="text-4xl font-semibold text-black">
                         {capitalizedCategoryName}
                     </h1>
-                    <h4 className="text-2xl text-gray-700">{categoryData?.description}</h4>
+                    <h4 className="md:text-2xl lg:text-2xl text-gray-700">{categoryData?.description}</h4>
                 </div>
                 <div className="text-md text-gray-500 font-normal mb-7">
                     72 aplicaciones
