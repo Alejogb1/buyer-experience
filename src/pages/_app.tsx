@@ -18,7 +18,9 @@ const MyApp: AppType<{ session: null }> = ({
           name="description"
           content="Encuentra la solución que mejor se adapte a tu negocio."
         />
-
+        <meta
+          lang="es"
+        />
       </Head>
       <Component className={inter.className + "h-full"} {...pageProps} />
     </Layout>
