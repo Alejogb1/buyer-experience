@@ -14,6 +14,11 @@ const MyApp: AppType<{ session: null }> = ({
     <Layout >
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta
+          name="description"
+          content="Encuentra la solución que mejor se adapte a tu negocio."
+        />
+
       </Head>
       <Component className={inter.className + "h-full"} {...pageProps} />
     </Layout>
