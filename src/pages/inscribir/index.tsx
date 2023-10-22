@@ -41,7 +41,7 @@ export default function Inscribir() {
             >
                 <div className="px-4 sm:px-0">
                     <h3 className="text-base font-semibold leading-7 text-gray-900">Inscribe a tu producto (gratis)</h3>
-                    <p className="max-w-2xl text-sm leading-6 text-gray-500">Registra tu software para que tu audiencia potencial lo encuentre.</p>
+                    <p className="max-w-2xl text-sm leading-6 text-gray-500">Registra tu software para que tu audiencia lo encuentre.</p>
                 </div>
                 <div className="">
                     <label className="block mb-2 text-xs font-medium text-gray-900 ">
