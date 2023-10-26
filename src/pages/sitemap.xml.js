@@ -3,7 +3,7 @@ import { api } from '~/utils/api'
 
 
 export default function sitemap() {
-  let siteUrl = 'https://www.audiencia.co/'
+  let siteUrl = 'https://www.audiencia.co'
   const {data: categoryQuery} = api.category.get.useQuery();
   const categoryList = categoryQuery?.map((item) => ({
     url: `${siteUrl}c/${item.slug}`,

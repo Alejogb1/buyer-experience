@@ -1,6 +1,7 @@
 # Block all crawlers for /accounts
 User-agent: *
 Disallow: /p/*
+Disallow: /[product]
 
 # Allow all crawlers
 User-agent: *
