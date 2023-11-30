@@ -19,5 +19,5 @@ export async function middleware(req: NextRequest) {
     url.pathname = `/s/${subdomain}${url.pathname}`;
     return NextResponse.rewrite(url);
   } 
-  
+  return NextResponse.next();
 }
