@@ -16,14 +16,6 @@ app.prepare().then(() => {
     return app.render(req, res, '/subdomain/salesmeetings', req.query)
   })
 
-  companyServer.get('/*', (req, res) => {
-    return app.render(req, res, `/subdomain${req.path}`, req.query)
-  })
-
-  companyServer.all('*', (req, res) => {
-    return handle(req, res)
-  })
-
   mainServer.use(vhost('salesmeetings.audiencia.co', companyServer))
 
   mainServer.listen(port, (err) => {
