@@ -13,13 +13,13 @@ export async function middleware(req: NextRequest) {
   if (PUBLIC_FILE.test(url.pathname) || url.pathname.includes('_next')) return;
 
   const host = req.headers.get('host');
-  console.log(host)
   const subdomain = getValidSubdomain(host);
   if (subdomain) {
     // Subdomain available, rewriting
     console.log(`>>> Rewriting: ${url.pathname} to ${subdomain}${url.pathname}`);
     url.pathname = `/s/${subdomain}${url.pathname}`;
+  } else {
+     url.pathname = '/'
   }
-
   return NextResponse.rewrite(url);
 }
