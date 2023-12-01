@@ -20,9 +20,9 @@ export async function middleware(req: NextRequest) {
       return NextResponse.rewrite(url);
     } 
   } catch (error) {
-    return { message: 'Failed subdomain validation' };
+    return { message: 'Failed subdomain validation ',error };
   }
 
-  
+  url.pathname = url.pathname
   return NextResponse.next()
 }
