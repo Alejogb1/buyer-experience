@@ -15,10 +15,7 @@ export async function middleware(req: NextRequest) {
       if (PUBLIC_FILE.test(url.pathname) || url.pathname.includes('_next')) return;
       // Subdomain available, rewriting
       console.log(`>>> Rewriting: ${url.pathname} to /${subdomain}${url.pathname}`);  
-      if(url.host === "audiencia.co") {
-        url.pathname = `/s/${subdomain}${url.pathname}`;
-
-      }
+      url.pathname = `/s/${ subdomain}${url.pathname}`;
       return NextResponse.rewrite(url);
     } else {
       url.pathname = '/'
