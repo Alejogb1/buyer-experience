@@ -9,16 +9,13 @@ const PUBLIC_FILE = /\.(.*)$/; // Files
 export async function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
   const host = req.headers.get('host');
+  console.log("Host: ", host)
   const subdomain = getValidSubdomain(host);
-  try {
     if (subdomain) {
       if (PUBLIC_FILE.test(url.pathname) || url.pathname.includes('_next')) return;
       // Subdomain available, rewriting
-      console.log(`>>> Rewriting: ${url.pathname} to ${subdomain}${url.pathname}`);
-      url.pathname = `${url.pathname}`;
-      return NextResponse.rewrite(url);
+      console.log(`>>> Rewriting: ${url.pathname} to /${subdomain}${url.pathname}`);      
+      url.pathname = `/s/${subdomain}${url.pathname}`;
     } 
-  } catch (error) {
-    return { message: 'Failed subdomain validation ', error };
-  }
+    return NextResponse.next();
 }
