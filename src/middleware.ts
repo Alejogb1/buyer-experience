@@ -17,5 +17,5 @@ export async function middleware(req: NextRequest) {
       console.log(`>>> Rewriting: ${url.pathname} to /${subdomain}${url.pathname}`);      
       url.pathname = `/s/${subdomain}${url.pathname}`;
     } 
-    return NextResponse.next();
+    return NextResponse.rewrite(url);
 }
