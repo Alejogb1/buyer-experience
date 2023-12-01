@@ -11,5 +11,15 @@ export async function middleware(req: NextRequest) {
 
   const host = req.headers.get('host');
   const subdomain = getValidSubdomain(host);
-
+  try {
+    if (subdomain) {
+      if (PUBLIC_FILE.test(url.pathname) || url.pathname.includes('_next')) return;
+      // Subdomain available, rewriting
+      console.log(`>>> Rewriting: ${url.pathname} to ${subdomain}${url.pathname}`);
+      url.pathname = `/s/${subdomain}${url.pathname}`;
+      return NextResponse.rewrite(url);
+    } 
+  } catch (error) {
+    return { message: 'Failed subdomain validation ', error };
+  }
 }
