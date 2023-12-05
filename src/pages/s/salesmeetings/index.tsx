@@ -23,7 +23,7 @@ export default function Salesmeetings() {
                     <div className="max-w-sm">
                         <div className="subheading">
                             <div className="grid grid-cols-2 gap-8">
-                                <h3 className="text-lg mb-4">Most searched</h3>
+                                <h3 className="text-md mb-4 font-semibold">Most searched</h3>
                                 <p>Similar search</p>
                             </div>
                             <div className="grid grid-cols-2 gap-8 items-center">
@@ -40,7 +40,7 @@ export default function Salesmeetings() {
                         </div>
                         <div className="subheading my-9">
                                 <div className="grid grid-cols-2 gap-8">
-                                    <h3 className="text-lg mb-4">Valuable searches</h3>
+                                    <h3 className="text-md mb-4 font-semibold">Valuable searches</h3>
                                     <p>Potential to profit</p>
                                 </div>                            
                                 <div className="grid grid-cols-2 gap-8 items-center">
@@ -56,7 +56,7 @@ export default function Salesmeetings() {
                         </div>
                         <div className="subheading">
                         <div className="grid grid-cols-2 gap-8">
-                                    <h3 className="text-lg mb-4">Ranking opportunity</h3>
+                                    <h3 className="text-md mb-4 font-semibold">Ranking opportunities</h3>
                                     <p>Time to rank</p>
                                 </div>                            
                                 <div className="grid grid-cols-2 gap-8 items-center">
