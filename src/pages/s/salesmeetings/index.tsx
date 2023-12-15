@@ -24,17 +24,14 @@ export default function Salesmeetings() {
                 <div className="max-w-sm">
                         <div className="subheading">
                             <div className="grid grid-cols-2 gap-8">
-                                <h3 className="text-md mb-4 font-semibold">Most searched</h3>
+                                <h3 className="text-md font-semibold">Most searched</h3>
                                 <p>Volume</p>
                             </div>
                             <div className="grid grid-cols-2 gap-8 items-center">
                                 <div className="column-1">
                                     <KeywordClusters json={"most searched"} />
                                 </div>
-                                <div className="column-2 items-center">
-                                    <div className="">
-                                        <p className="text-xs text-gray-500">80,120</p>
-                                    </div>
+                                <div className="column-2 items-center grid gap-2">
                                     <div className="">
                                         <p className="text-xs text-gray-500">80,120</p>
                                     </div>
@@ -60,7 +57,7 @@ export default function Salesmeetings() {
                         </div>
                         <div className="subheading">
                         <div className="grid grid-cols-2 gap-8">
-                                    <h3 className="text-md mb-4 font-semibold">Ranking opportunities</h3>
+                                    <h3 className="text-md font-semibold">Ranking opportunities</h3>
                                     <p>Difficulty</p>
                                 </div>                            
                                 <div className="grid grid-cols-2 gap-8 items-center">
@@ -68,12 +65,23 @@ export default function Salesmeetings() {
                                         <KeywordClusters json={"ranking opportunities"}/>
                                     </div>
                                     <div className="column-2 items-center">
-                                        <p className="text-xs text-gray-700">60k</p>
-                                        <p className="text-xs text-gray-700">60k</p>
-                                        <p className="text-xs text-gray-700">60k</p>
-                                        <p className="text-xs text-gray-700">60k</p>
-                                        <p className="text-xs text-gray-700">60k</p>
-                                        <p className="text-xs text-gray-700">60k</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
+                                        <p className="text-xs text-gray-700">Low</p>
                                     </div> 
                                 </div>
                                 <button className="mt-2 mb-2 text-white bg-black hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-md text-xs w-full sm:w-auto px-2 py-1 text-center :bg-black :hover:bg-black :focus:ring-black">View all</button>
