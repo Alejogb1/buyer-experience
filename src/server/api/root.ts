@@ -1,6 +1,7 @@
 import { createTRPCRouter } from "~/server/api/trpc";
 import { categoryRouter } from "~/server/api/routers/categories";
 import { productRouter } from "~/server/api/routers/products";
+import { BigQueryRouter } from "~/server/api/routers/bigquery";
 import { reactHookFormRouter } from "~/server/api/routers/form"
 import { initTRPC, TRPCError } from '@trpc/server';
 
@@ -12,6 +13,7 @@ const t = initTRPC.create();
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
+  bigQuery: BigQueryRouter,
   category: categoryRouter,
   product: productRouter,
   form: reactHookFormRouter,
