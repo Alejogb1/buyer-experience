@@ -40,6 +40,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-
-*.json
+key.json
