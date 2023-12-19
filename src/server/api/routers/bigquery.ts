@@ -31,14 +31,20 @@ export const BigQueryRouter = createTRPCRouter({
         }),
     getKeywords: publicProcedure
         .input(z.object({ slug: z.string() }))
+        
         .query(async ({ctx, input}) =>  {
             const query = `
             SELECT * FROM \`modular-hulling-286301.salesmeetings.${input.slug}\` LIMIT 1000
             `;
+            console.log( `-----BEGIN PRIVATE KEY-----${process.env.GOOGLE_PRIVATE_KEY}-----END PRIVATE KEY-----`)
             const options = {
-                keyFilename: "/Users/alejo/Documents/GitHub/buyer-experience/src/utils/key.json",
-                query: query,
                 projectId: process.env.PROJECT_ID,
+                credentials : {
+                    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+                    private_key: process.env.GOOGLE_PRIVATE_KEY
+                },
+/*                     keyFilename: "/Users/alejo/Documents/GitHub/buyer-experience/src/utils/key.json",
+ */                query: query,
             };
             console.log(1)
             const bigquery = new BigQuery(options);
@@ -51,7 +57,6 @@ export const BigQueryRouter = createTRPCRouter({
     
             const data = rows.map((row:any) => row.fieldname);
     
-            console.log(data)
             return rows
         })
 })
