@@ -18,7 +18,7 @@ export async function middleware(req: NextRequest) {
         console.log(1)
         url.pathname = `/s/${subdomain}${url.pathname}`
         return NextResponse.rewrite(url);
-      } else if (host && host.includes('salesmeetings') && url.pathname != "/") {
+      } else if (host && host.includes('salesmeetings') ) {
         console.log(2)
           url.pathname = `/s/${subdomain}${url.pathname}`
           return NextResponse.rewrite(url);
