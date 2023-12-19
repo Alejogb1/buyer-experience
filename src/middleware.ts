@@ -9,20 +9,27 @@ const PUBLIC_FILE = /\.(.*)$/; // Files
 export async function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
   const host = req.headers.get('host');
-  console.log("cloned url: ", url)
   const subdomain = getValidSubdomain(host);
     if (subdomain) {
       if (PUBLIC_FILE.test(url.pathname) || url.pathname.includes('_next')) return;
       // Subdomain available, rewriting
       console.log(`>>> Rewriting: ${url.pathname} to /${subdomain}${url.pathname}`); 
-      if (host && host.includes('salesmeetings')) {
-        url.pathname = `/s/${ subdomain}${url.pathname}`
+      if (host && host.includes('salesmeetings') && url.pathname == "/") {
+        console.log(1)
+        url.pathname = `/s/${subdomain}${url.pathname}`
         return NextResponse.rewrite(url);
-      } else {
+      } else if (host && host.includes('salesmeetings') && url.pathname != "/") {
+        console.log(2)
+          url.pathname = `/s/${subdomain}${url.pathname}`
+          return NextResponse.rewrite(url);
+      }
+      else {
+        console.log("next response")
         return NextResponse.rewrite(req.nextUrl);
       }
     } else {
       url.pathname = '/'
+      console.log(3)
       return NextResponse.rewrite(req.nextUrl);
     }
 }
