@@ -24,9 +24,9 @@ export default function MostSearched(props: InferGetStaticPropsType<typeof getSt
     console.log("data? ", data)
 
     return( 
-        <div className="relative overflow-x-auto">
+        <div className="relative overflow-x-auto  border-collapse indent-initial border-spacing-2 border-gray-100 border">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-[10px] bg-gray-100 text-black font-thin dark:bg-gray-700 dark:text-gray-400">
+                <thead className="text-[11px] bg-gray-100 text-black font-thin dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" className="pl-2">
                             Keyword
@@ -51,7 +51,7 @@ export default function MostSearched(props: InferGetStaticPropsType<typeof getSt
                                     <td scope="row" className="pl-2 py-1 font-normal text-gray-900 whitespace-nowrap dark:text-white">
                                         {item.Keyword}
                                     </td>
-                            </tr>
+                                </tr>
                             )
                     }})}
                    
