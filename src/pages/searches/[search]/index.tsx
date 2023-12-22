@@ -24,31 +24,39 @@ export default function MostSearched(props: InferGetStaticPropsType<typeof getSt
     console.log("data? ", data)
 
     return( 
-        <div className="relative overflow-x-auto  border-collapse indent-initial border-spacing-2 border-gray-100 border">
+        <div className="relative overflow-x-auto  border-collapse indent-initial border-spacing-2 border-gray-100 border-y">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-[11px] bg-gray-100 text-black font-thin dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" className="pl-2">
-                            Keyword
+                <thead className="text-[11px] bg-slate-100/80 text-black font-thin dark:bg-gray-700 dark:text-gray-400">
+                    <tr className="border-y">
+                        <th scope="col" className="pl-2 py-2">
+                            <div className="font-bold text-left leading-6 text-gray-600/100">
+                                KEYWORD
+                            </div>
                         </th>
                         <th scope="col" className="">
-                            Volume
+                            <div className="font-bold text-left leading-6 text-gray-600/100">
+                                KEYWORD
+                            </div>
                         </th>
                         <th scope="col" className="">
-                            Category
+                            <div className="font-bold text-left leading-6 text-gray-600/100">
+                                KEYWORD
+                            </div>
                         </th>
                         <th scope="col" className="">
-                            Price
+                            <div className="font-bold text-left leading-6 text-gray-600/100">
+                                KEYWORD
+                            </div>
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y">
                     {data?.map((item) =>  {
                         let string = 'Keyword_Difficulty'
                         if(item) {
                             return(
-                                <tr className="bg-white dark:bg-gray-800">
-                                    <td scope="row" className="pl-2 py-1 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                <tr className="border-y-1 dark:bg-gray-800 table-row border-gray-100 align-inherit border-solid box-border leading-6">
+                                    <td scope="row" className="font-semibold pl-2 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
                                         {item.Keyword}
                                     </td>
                                 </tr>
