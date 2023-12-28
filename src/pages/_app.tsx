@@ -1,18 +1,19 @@
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
-import { Inter } from "next/font/google";
 import Layout from "~/components/Layout";
 import Head from "next/head";
 import Script from "next/script";
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+import { SessionProvider } from "next-auth/react"
+
 
 const MyApp: AppType<{ session: null }> = ({
   Component,
-  pageProps: { ...pageProps },
+  pageProps: { session, ...pageProps },
 }) => {
   return (
-    <Layout >
+    <SessionProvider session={session}>
+          <Layout >
       <Head>
           <Script id="google-tag-manager">
             {`
@@ -44,8 +45,9 @@ const MyApp: AppType<{ session: null }> = ({
         `}
         </Script>
       </div>
-      <Component className={inter.className + "h-full"} {...pageProps} />
+      <Component className={ "h-full"} {...pageProps} />
     </Layout>
+    </SessionProvider>
   );
 };
 
