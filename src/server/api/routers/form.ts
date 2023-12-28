@@ -3,6 +3,8 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 import { validationSchema } from '~/pages/opinar/index';
 import { validationSchemaProvider } from "~/pages/inscribir";
 import { validationSchemaLead } from '~/pages/p/[product]';
+import { validationSchemaDemo } from "~/components/DemoForm"
+
 export const reactHookFormRouter = createTRPCRouter({
     addReview: publicProcedure
         .input(validationSchema)
@@ -37,6 +39,20 @@ export const reactHookFormRouter = createTRPCRouter({
         .input(validationSchemaLead)
         .mutation(async ({ input, ctx }) => {
             const providerInfo = await ctx.prisma.form.create({
+                data: {
+                    ...input
+                }
+            });
+            return {
+                status: 201,
+                message: 'Lead newsletter form submitted succesfully',
+                providerInfo,
+            }
+        }),
+    addDemoLead: publicProcedure
+        .input(validationSchemaDemo)
+        .mutation(async ({ input, ctx }) => {
+            const providerInfo = await ctx.prisma.demoForm.create({
                 data: {
                     ...input
                 }
