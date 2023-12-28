@@ -24,6 +24,14 @@ model Form {
   createdAt   DateTime @default(now())
 }
 
+model DemoForm {
+  id Int @id @default(autoincrement())
+  name String
+  business_email String
+  phone_number String
+  job_title String
+}
+
 model Product {
   id          Int        @id @default(autoincrement())
   name        String
