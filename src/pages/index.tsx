@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Script from 'next/script'
 
-const Home = () => {
+const Home = () => {  
 
   return (
     <>
@@ -12,7 +12,7 @@ const Home = () => {
       <main>
         <div className="relative">
           <div className="max-w-4xl flex justify-left flex-column">
-            <div className="mt-12 mb-20">
+            <div className="mt-12">
               <h1 className="max-w-2xl text-4xl text-left  mx-auto font-bold tracking-tight text-gray-900 sm:text-2xl md:text-4xl lg:text-6xl">
                 Cual es el mejor software  para tu empresa?
               </h1>
@@ -26,12 +26,11 @@ const Home = () => {
                 >
                   Buscar soluciones
                 </Link>
-                <Link href="/opinar" className="text-sm font-semibold leading-6 text-gray-900 mt-2">
-                  Opinar <span aria-hidden="true">→</span>
-                </Link>
+                <Link href="/opinar" className="text-sm font-semibold leading-6 text-gray-900 mt-2"><a href="">Opinar <span aria-hidden="true">→</span></a></Link>
               </div>
             </div>
-          </div>
+            
+          </div>     
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true"
@@ -55,6 +54,11 @@ const Home = () => {
           gtag('js', new Date());
  
           gtag('config', 'G-J531CF9875');
+        `}
+        </Script>
+        <Script defer>
+        {`
+<script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('3P1w24d99plamY5n'); </script>
         `}
         </Script>
       </div>
