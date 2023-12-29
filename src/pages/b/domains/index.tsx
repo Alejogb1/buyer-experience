@@ -12,7 +12,7 @@ export default function Domains() {
     return( 
     <main>
         <table className="w-full">
-                <thead className="text-[11px] bg-slate-100/80 text-black font-thin dark:bg-gray-700 dark:text-gray-400 flex">
+                <thead className="text-[11px] bg-slate-100/80 text-black font-thin bg-gray-700 text-gray-400 flex">
                     <tr className="border-y">
                         <th scope="col" className="pl-2 py-2">
                             <div className="font-bold text-left leading-6 text-gray-600/100">

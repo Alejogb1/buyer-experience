@@ -25,8 +25,8 @@ export default function MostSearched(props: InferGetStaticPropsType<typeof getSt
 
     return( 
         <div className="relative overflow-x-auto  border-collapse indent-initial border-spacing-2 border-gray-100 border-y">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-[11px] bg-slate-100/80 text-black font-thin dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 text-gray-400">
+                <thead className="text-[11px] bg-slate-100/80 text-black font-thin bg-gray-700 text-gray-400">
                     <tr className="border-y">
                         <th scope="col" className="pl-2 py-2">
                             <div className="font-bold text-left leading-6 text-gray-600/100">
@@ -55,8 +55,8 @@ export default function MostSearched(props: InferGetStaticPropsType<typeof getSt
                         let string = 'Keyword_Difficulty'
                         if(item) {
                             return(
-                                <tr className="border-y-1 dark:bg-gray-800 table-row border-gray-100 align-inherit border-solid box-border leading-6">
-                                    <td scope="row" className="font-semibold pl-2 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                <tr className="border-y-1 bg-gray-800 table-row border-gray-100 align-inherit border-solid box-border leading-6">
+                                    <td scope="row" className="font-semibold pl-2 py-3 font-normal text-gray-900 whitespace-nowrap text-white">
                                         {item.Keyword}
                                     </td>
                                 </tr>
