@@ -8,6 +8,7 @@ import { SlugType } from "~/types"
 import { useRouter } from "next/router";
 import ProductCard from "~/components/ProductCard";
 import capitalizeFirstLetters from "~/utils/capitalize";
+import Link from "next/link";
 
 type SSGHelper = ReturnType<typeof generateSSGHelper>;
 
@@ -20,7 +21,7 @@ function capitalizeFirstLetter(string: String) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
+const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter()
     if (router.isFallback) {
         return <p>Loading...</p>
@@ -40,14 +41,10 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
 
     const capitalizedCategoryName = categoryData?.name ? capitalizeFirstLetter(categoryData.name) : '';
 
-
-
-
     const firstProduct = productData?.products[0]
     const secondProduct = productData?.products[1]
     const thirdProduct = productData?.products[2]
 
-    console.log(secondProduct)
     return (
         <>
             <Head>
@@ -57,30 +54,61 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     content={categoryData?.description}
                 />
             </Head>
-            <div className="mx-auto max-w-7xl h-100 ">
+            <div className="mx-auto max-w-7xl h-100">
                 {/* {<CategoryTitle {...category}/>} */}
                 <div className="w-11/12 md:w-10/12 lg:w-9/12 my-2 lg:my-12">
                     <h1 className="text-2xl md:text-2xl lg:text-4xl font-semibold text-black lg:pb-2">
                         {capitalizedCategoryName}
                     </h1>
                     <h4 className=" md:text-2xl lg:text-2xl text-gray-700">{categoryData?.description}</h4>
+                    
                 </div>
                 <div className="text-md text-gray-500 font-normal mb-7">
                     72 aplicaciones
                 </div>
-                <div className="subheading">
-                    <h3 className="text-lg mb-4">Más popular</h3>
-                    {firstProduct && <ProductCard product={firstProduct} />}
+                <div className="flex justify-between">
+                    <div className="max-w-4xl">
+                        <div className="subheading w-10/12">
+                            <h3 className="text-lg mb-4">Más popular</h3>
+                            <div className="md:flex lg:flex items-center">
+                                <div className="">
+                                        {firstProduct && <ProductCard product={firstProduct} />}
+                                </div>
+                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-20"></div>                               
+                                <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4">
+                                    <a href="/opinar" className='hover:cursor-pointer lg:max-h-6 text-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
+                                </div>                              
+                            </div>
+                        </div>
+                        <div className="subheading my-9 w-10/12">
+                            <h3 className="text-lg mb-4">Mejor para pymes</h3>
+                            <div className="md:flex lg:flex items-center">
+                                <div className="">
+                                        {secondProduct && <ProductCard product={secondProduct} />}
+                                </div>
+                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-20"></div>                               
+                                <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4">
+                                    <a href="/opinar" className='hover:cursor-pointer lg:max-h-6 text-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
+                                </div>                              
+                            </div>
+                        </div>
+                        <div className="subheading w-10/12">
+                            <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
+                            <div className="md:flex lg:flex items-center">
+                                <div className="">
+                                        {thirdProduct && <ProductCard product={thirdProduct} />}
+                                </div>
+                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-20"></div>                               
+                                <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4">
+                                    <a href="/opinar" className='hover:cursor-pointer lg:max-h-6 text-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="subheading my-9">
-                    <h3 className="text-lg mb-4">Mejor para pymes</h3>
-                    {secondProduct && <ProductCard product={secondProduct} />}
-
-                </div>
-                <div className="subheading">
-                    <h3 className="text-lg mb-4">Mejor para grandes empresas</h3>
-                    {thirdProduct && <ProductCard product={thirdProduct} />}
-                </div>
+            </div>
+            <div className="py-10 sm:py-5">
+                <p className="text-lg font-semibold">Te podría interesar</p>
             </div>
         </>
     )
@@ -92,8 +120,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const slug = context.params?.category;
 
     if (typeof slug !== "string") throw new Error("no slug");
-
-    const category = await ssg.category.getCategoryBySlug.prefetch({ slug })
 
     return {
         props: {
