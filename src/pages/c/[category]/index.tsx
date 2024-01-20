@@ -104,9 +104,6 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                     </div>
                 </div>
             </div>
-            <div className="py-10 sm:py-5">
-                <p className="text-lg font-semibold">Te podría interesar</p>
-            </div>
         </>
     )
 }
