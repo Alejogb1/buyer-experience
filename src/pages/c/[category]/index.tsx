@@ -74,7 +74,6 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                                 <div className="w-10/12">
                                         {firstProduct && <ProductCard product={firstProduct} />}
                                 </div>
-                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-14"></div>                               
                                 <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4 items-center pb-4">
                                     <a href="/opinar" className='mb-2 hover:cursor-pointer lg:max-h-6 text-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
                                 </div>                              
@@ -86,7 +85,6 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                                 <div className="w-10/12">
                                         {secondProduct && <ProductCard product={secondProduct} />}
                                 </div>
-                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-14 "></div>                               
                                 <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4 items-center pb-4">
                                     <a href="/opinar" className='mb-2 hover:cursor-pointer lg:max-h-6 text-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
                                 </div>                              
@@ -98,7 +96,6 @@ const Category: NextPage<Props> = (props: InferGetStaticPropsType<typeof getStat
                                 <div className="w-10/12">
                                         {thirdProduct && <ProductCard product={thirdProduct} />}
                                 </div>
-                                <div className="px-3 hidden lg:block lg:border-r border-gray-300 h-14"></div>                               
                                 <div className="hidden lg:block md:block ml-4 mt-10 lg:mt-4 items-center flex pb-4">
                                     <a href="/opinar" className='mb-4 hover:cursor-pointer lg:max-h-6 text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-sm lg:rounded-md text-xs w-full sm:w-auto p-3 lg:px-3 lg:py-1.5 text-center :bg-black :hover:bg-black :focus:ring-black'>Opinar</a>
                                 </div>                              
